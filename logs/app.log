@@ -1,0 +1,4 @@
+2026-06-09 19:09:43,485 INFO: Azhar Al-Sanabel startup [in C:\Users\Yahya\Desktop\azhar_alsanabel (1)\app.py:80]
+2026-06-09 19:09:43,677 INFO: Admin user created: admin@azhar-alsanabel.com [in C:\Users\Yahya\Desktop\azhar_alsanabel (1)\app.py:810]
+2026-06-09 19:09:43,683 INFO: Products seeded [in C:\Users\Yahya\Desktop\azhar_alsanabel (1)\app.py:836]
+2026-06-09 19:09:43,696 INFO: Database seeded successfully [in C:\Users\Yahya\Desktop\azhar_alsanabel (1)\app.py:854]

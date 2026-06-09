@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azhar Al-Sanabel | Luxury Flower Shop</title>
+    <meta name="description" content="Azhar Al-Sanabel - Premium flower shop in Irbid, Jordan. Natural bouquets, bridal arrangements, gifts & wedding car decoration.">
+    <meta name="theme-color" content="#FF9DE2">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+    :root {
+        --pink: #FF9DE2;
+        --pink-light: #FFB8EC;
+        --pink-dark: #E87BC8;
+        --pink-glow: rgba(255, 157, 226, 0.4);
+        --pink-subtle: rgba(255, 157, 226, 0.08);
+        --black: #050505;
+        --black-light: #0a0a0a;
+        --black-card: #0f0f0f;
+        --black-elevated: #161616;
+        --white: #ffffff;
+        --gray-100: #f5f5f5;
+        --gray-200: #e5e5e5;
+        --gray-300: #d4d4d4;
+        --gray-400: #a3a3a3;
+        --gray-500: #737373;
+        --gray-600: #525252;
+        --gray-700: #404040;
+        --gray-800: #262626;
+        --gray-900: #171717;
+        --success: #22c55e;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --gold: #d4af37;
+        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+        --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: var(--black);
+        color: var(--white);
+        overflow-x: hidden;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--pink-light); }
+    ::selection { background: var(--pink); color: var(--black); }
+    :focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; border-radius: 4px; }
+
+    #bg-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+    .header {
+        position: fixed; top: 0; width: 100%; z-index: 1000;
+        background: rgba(5, 5, 5, 0.7); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-bottom: 1px solid rgba(255, 157, 226, 0.08); transition: all 0.5s var(--ease-out-expo);
+    }
+    .header.scrolled { background: rgba(5, 5, 5, 0.95); box-shadow: 0 4px 30px rgba(255, 157, 226, 0.08); }
+    .header-inner { max-width: 1400px; margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; color: var(--white); }
+    .logo-mark { width: 44px; height: 44px; background: var(--black); border: 2px solid var(--pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; transition: transform 0.4s var(--ease-spring); }
+    .logo-mark:hover { transform: scale(1.1) rotate(5deg); }
+    .logo-mark::before { content: ''; position: absolute; inset: -3px; border-radius: 50%; background: conic-gradient(from 0deg, transparent, var(--pink), transparent); animation: spin 4s linear infinite; z-index: -1; opacity: 0.5; }
+    .logo-mark svg { width: 22px; height: 22px; fill: var(--pink); }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--pink); letter-spacing: 0.5px; line-height: 1.2; }
+    .logo-subtitle { font-size: 10px; color: var(--gray-500); letter-spacing: 2.5px; text-transform: uppercase; font-weight: 500; }
+    .nav-desktop { display: flex; gap: 40px; list-style: none; }
+    .nav-desktop a { color: var(--gray-400); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color 0.3s; position: relative; padding: 5px 0; }
+    .nav-desktop a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--pink); transition: width 0.4s var(--ease-out-expo); border-radius: 1px; }
+    .nav-desktop a:hover, .nav-desktop a.active { color: var(--pink); }
+    .nav-desktop a:hover::after, .nav-desktop a.active::after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 20px; }
+    .lang-switch { background: var(--black-card); border: 1px solid var(--gray-800); color: var(--gray-400); padding: 6px 16px; border-radius: 20px; font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s var(--ease-out-expo); letter-spacing: 0.5px; }
+    .lang-switch:hover { border-color: var(--pink); color: var(--pink); box-shadow: 0 0 15px var(--pink-glow); }
+    .cart-trigger { position: relative; color: var(--white); font-size: 20px; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 12px; transition: all 0.3s var(--ease-out-expo); }
+    .cart-trigger:hover { background: var(--black-elevated); color: var(--pink); transform: translateY(-2px); }
+    .cart-badge { position: absolute; top: -2px; right: -2px; background: var(--pink); color: var(--black); font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: badgePulse 2s ease infinite; }
+    @keyframes badgePulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+    .user-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--pink); color: var(--black); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; cursor: pointer; border: 2px solid transparent; transition: all 0.3s var(--ease-out-expo); }
+    .user-avatar:hover { border-color: var(--white); box-shadow: 0 0 25px var(--pink-glow); transform: scale(1.05); }
+    .login-btn { background: transparent; border: 1.5px solid var(--pink); color: var(--pink); padding: 8px 22px; border-radius: 25px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.3s var(--ease-out-expo); letter-spacing: 0.3px; }
+    .login-btn:hover { background: var(--pink); color: var(--black); box-shadow: 0 4px 20px var(--pink-glow); transform: translateY(-2px); }
+    .mobile-toggle { display: none; color: var(--white); font-size: 22px; width: 42px; height: 42px; align-items: center; justify-content: center; border-radius: 12px; transition: all 0.3s; }
+    .mobile-toggle:hover { background: var(--black-elevated); color: var(--pink); }
+    .mobile-nav { display: none; position: fixed; top: 70px; left: 0; right: 0; background: rgba(5, 5, 5, 0.98); backdrop-filter: blur(30px); border-bottom: 1px solid var(--gray-900); z-index: 999; padding: 20px; transform: translateY(-100%); opacity: 0; transition: all 0.4s var(--ease-out-expo); }
+    .mobile-nav.show { transform: translateY(0); opacity: 1; }
+    .mobile-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .mobile-nav a { display: block; padding: 14px 20px; color: var(--gray-400); font-size: 16px; font-weight: 500; border-radius: 12px; transition: all 0.3s; }
+    .mobile-nav a:hover, .mobile-nav a.active { background: var(--pink-subtle); color: var(--pink); }
+
+    .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 70px; }
+    .hero-content { position: relative; z-index: 10; text-align: center; max-width: 900px; padding: 0 30px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 10px; background: var(--pink-subtle); border: 1px solid rgba(255, 157, 226, 0.2); color: var(--pink); padding: 10px 24px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 40px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s var(--ease-out-expo) 0.2s forwards; }
+    .hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s var(--ease-out-expo) 0.4s forwards; }
+    .hero h1 .accent { color: var(--pink); text-shadow: 0 0 60px rgba(255, 157, 226, 0.5); font-style: italic; display: inline-block; }
+    .hero-desc { font-size: 18px; color: var(--gray-400); max-width: 600px; margin: 0 auto 40px; line-height: 1.8; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s var(--ease-out-expo) 0.6s forwards; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s var(--ease-out-expo) 0.8s forwards; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border-radius: 50px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 15px; cursor: pointer; transition: all 0.4s var(--ease-out-expo); text-decoration: none; border: none; letter-spacing: 0.3px; position: relative; overflow: hidden; }
+    .btn::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(255,255,255,0.1), transparent); transform: translateX(-100%); transition: transform 0.6s; }
+    .btn:hover::before { transform: translateX(100%); }
+    .btn-pink { background: var(--pink); color: var(--black); box-shadow: 0 4px 30px rgba(255, 157, 226, 0.35); }
+    .btn-pink:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 40px rgba(255, 157, 226, 0.55); }
+    .btn-pink:active { transform: translateY(-1px) scale(0.98); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid var(--gray-700); }
+    .btn-outline:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-3px); box-shadow: 0 0 20px rgba(255, 157, 226, 0.15); }
+    .hero-social { display: flex; gap: 16px; justify-content: center; margin-top: 50px; opacity: 0; transform: translateY(30px); animation: fadeInUp 1s var(--ease-out-expo) 1s forwards; }
+    .hero-social a { width: 48px; height: 48px; border-radius: 50%; background: var(--black-card); border: 1px solid var(--gray-800); display: flex; align-items: center; justify-content: center; color: var(--gray-400); font-size: 18px; transition: all 0.4s var(--ease-out-expo); position: relative; overflow: hidden; }
+    .hero-social a::before { content: ''; position: absolute; inset: 0; background: var(--pink); transform: scale(0); border-radius: 50%; transition: transform 0.4s var(--ease-spring); z-index: -1; }
+    .hero-social a:hover { color: var(--black); border-color: var(--pink); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(255, 157, 226, 0.25); }
+    .hero-social a:hover::before { transform: scale(1); }
+    .scroll-indicator { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--gray-600); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0; animation: fadeInUp 1s var(--ease-out-expo) 1.4s forwards; }
+    .scroll-indicator .mouse { width: 24px; height: 38px; border: 2px solid var(--gray-700); border-radius: 12px; position: relative; }
+    .scroll-indicator .mouse::after { content: ''; position: absolute; top: 8px; left: 50%; width: 4px; height: 8px; background: var(--pink); border-radius: 2px; transform: translateX(-50%); animation: scrollWheel 2s ease infinite; }
+    @keyframes scrollWheel { 0% { top: 8px; opacity: 1; } 100% { top: 20px; opacity: 0; } }
+
+    .section { position: relative; z-index: 5; padding: 120px 30px; }
+    .section-header { text-align: center; margin-bottom: 70px; opacity: 0; transform: translateY(40px); transition: all 0.8s var(--ease-out-expo); }
+    .section-header.visible { opacity: 1; transform: translateY(0); }
+    .section-header h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 16px; }
+    .section-header h2 em { color: var(--pink); font-style: italic; }
+    .section-header p { color: var(--gray-500); font-size: 17px; max-width: 550px; margin: 0 auto; line-height: 1.7; }
+    .section-line { width: 50px; height: 3px; background: var(--pink); margin: 20px auto; border-radius: 2px; position: relative; }
+    .section-line::after { content: ''; position: absolute; inset: -4px; border-radius: 4px; background: var(--pink); opacity: 0.3; filter: blur(8px); }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .service-card { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; padding: 45px 30px; text-align: center; transition: all 0.5s var(--ease-out-expo); position: relative; overflow: hidden; opacity: 0; transform: translateY(40px); }
+    .service-card.visible { opacity: 1; transform: translateY(0); }
+    .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--pink); transform: scaleX(0); transition: transform 0.5s var(--ease-out-expo); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card:hover { transform: translateY(-12px); border-color: rgba(255, 157, 226, 0.25); box-shadow: 0 30px 60px rgba(255, 157, 226, 0.08); }
+    .service-icon { width: 80px; height: 80px; background: var(--pink-subtle); border-radius: 24px; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 24px; transition: all 0.4s var(--ease-spring); color: var(--pink); }
+    .service-card:hover .service-icon { background: var(--pink); color: var(--black); transform: scale(1.1) rotate(-5deg); }
+    .service-card h3 { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+    .service-card p { color: var(--gray-500); font-size: 14px; line-height: 1.7; }
+
+    .products-section { background: linear-gradient(180deg, var(--black) 0%, var(--black-light) 50%, var(--black) 100%); }
+    .filter-bar { display: flex; gap: 12px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; }
+    .filter-chip { background: var(--black-card); border: 1px solid var(--gray-900); color: var(--gray-500); padding: 10px 24px; border-radius: 30px; font-family: 'Inter', sans-serif; font-weight: 500; cursor: pointer; transition: all 0.3s var(--ease-out-expo); font-size: 13px; letter-spacing: 0.5px; }
+    .filter-chip:hover { border-color: var(--pink); color: var(--pink); }
+    .filter-chip.active { background: var(--pink); color: var(--black); border-color: var(--pink); box-shadow: 0 4px 20px rgba(255, 157, 226, 0.3); }
+    .search-bar { max-width: 500px; margin: 0 auto 30px; position: relative; }
+    .search-bar input { width: 100%; padding: 14px 50px 14px 20px; background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 50px; color: var(--white); font-family: 'Inter', sans-serif; font-size: 15px; transition: all 0.3s; }
+    .search-bar input:focus { outline: none; border-color: var(--pink); box-shadow: 0 0 0 4px rgba(255, 157, 226, 0.1); }
+    .search-bar i { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--gray-600); }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto; }
+    .product-card { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; overflow: hidden; transition: all 0.5s var(--ease-out-expo); position: relative; cursor: pointer; opacity: 0; transform: translateY(40px); }
+    .product-card.visible { opacity: 1; transform: translateY(0); }
+    .product-card:hover { transform: translateY(-10px) scale(1.02); border-color: rgba(255, 157, 226, 0.25); box-shadow: 0 30px 60px rgba(255, 157, 226, 0.1); }
+    .product-image-wrap { position: relative; height: 280px; overflow: hidden; background: linear-gradient(135deg, #1a0a14, #0a0a0a); }
+    .product-image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease-out-expo); }
+    .product-card:hover .product-image-wrap img { transform: scale(1.15); }
+    .product-image-wrap::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, var(--black-card) 0%, transparent 50%); opacity: 0.8; }
+    .product-badge { position: absolute; top: 16px; right: 16px; background: var(--pink); color: var(--black); padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; z-index: 5; box-shadow: 0 4px 15px rgba(255, 157, 226, 0.3); }
+    .product-info { padding: 28px; position: relative; z-index: 5; }
+    .product-cat { color: var(--pink); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+    .product-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+    .product-price { font-size: 26px; font-weight: 700; color: var(--pink); margin-bottom: 4px; }
+    .product-price span { font-size: 14px; color: var(--gray-500); font-weight: 400; }
+    .product-stock { font-size: 12px; color: var(--success); margin-bottom: 16px; display: flex; align-items: center; gap: 6px; }
+    .product-stock.low { color: var(--warning); }
+    .product-stock.out { color: var(--danger); }
+    .product-stock .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: pulseDot 2s ease infinite; }
+    @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .add-cart-btn { width: 100%; background: var(--pink); color: var(--black); border: none; padding: 14px; border-radius: 14px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s var(--ease-out-expo); display: flex; align-items: center; justify-content: center; gap: 8px; letter-spacing: 0.5px; position: relative; overflow: hidden; }
+    .add-cart-btn::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(255,255,255,0.15), transparent); transform: translateX(-100%); transition: transform 0.5s; }
+    .add-cart-btn:hover::after { transform: translateX(100%); }
+    .add-cart-btn:hover { background: var(--pink-dark); transform: scale(1.02); box-shadow: 0 4px 20px rgba(255, 157, 226, 0.3); }
+    .add-cart-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; padding: 120px 30px 60px; align-items: center; }
+    .detail-image { border-radius: 30px; overflow: hidden; position: relative; box-shadow: 0 30px 80px rgba(255, 157, 226, 0.1); }
+    .detail-image img { width: 100%; height: auto; display: block; }
+    .detail-image::before { content: ''; position: absolute; inset: 0; border-radius: 30px; border: 1px solid rgba(255, 157, 226, 0.2); pointer-events: none; z-index: 10; }
+    .detail-content h1 { font-size: 38px; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .detail-price { font-size: 42px; font-weight: 700; color: var(--pink); margin-bottom: 24px; }
+    .detail-desc { color: var(--gray-400); font-size: 16px; line-height: 1.8; margin-bottom: 30px; }
+    .detail-meta { display: flex; gap: 30px; margin-bottom: 30px; padding: 20px 0; border-top: 1px solid var(--gray-900); border-bottom: 1px solid var(--gray-900); }
+    .meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .meta-label { font-size: 12px; color: var(--gray-600); text-transform: uppercase; letter-spacing: 1px; }
+    .meta-value { font-size: 16px; font-weight: 600; color: var(--white); }
+    .qty-row { display: flex; align-items: center; gap: 20px; margin-bottom: 30px; }
+    .qty-label { font-weight: 600; font-size: 15px; }
+    .qty-control { display: flex; align-items: center; gap: 12px; background: var(--black-elevated); border-radius: 14px; padding: 4px; }
+    .qty-btn { width: 44px; height: 44px; border-radius: 12px; background: var(--black-card); border: 1px solid var(--gray-900); color: var(--white); font-size: 18px; cursor: pointer; transition: all 0.3s var(--ease-out-expo); display: flex; align-items: center; justify-content: center; }
+    .qty-btn:hover { background: var(--pink); color: var(--black); border-color: var(--pink); }
+    .qty-value { width: 50px; text-align: center; font-weight: 700; font-size: 18px; }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1200px; margin: 0 auto; align-items: center; }
+    .about-visual { position: relative; border-radius: 30px; overflow: hidden; }
+    .about-visual img { width: 100%; height: auto; display: block; border-radius: 30px; }
+    .about-visual::after { content: ''; position: absolute; inset: 0; border-radius: 30px; border: 1px solid rgba(255, 157, 226, 0.15); pointer-events: none; }
+    .about-content h2 { font-size: 40px; font-weight: 700; margin-bottom: 24px; line-height: 1.2; }
+    .about-content h2 em { color: var(--pink); font-style: italic; }
+    .about-content p { color: var(--gray-400); font-size: 16px; line-height: 1.8; margin-bottom: 20px; }
+    .stats-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 40px; }
+    .stat-box { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 20px; padding: 30px; text-align: center; transition: all 0.4s var(--ease-out-expo); opacity: 0; transform: translateY(20px); }
+    .stat-box.visible { opacity: 1; transform: translateY(0); }
+    .stat-box:hover { border-color: rgba(255, 157, 226, 0.25); transform: translateY(-5px); box-shadow: 0 15px 40px rgba(255, 157, 226, 0.06); }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: var(--pink); margin-bottom: 6px; }
+    .stat-label { font-size: 13px; color: var(--gray-500); }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1200px; margin: 0 auto; }
+    .contact-info h3 { font-size: 24px; font-weight: 600; margin-bottom: 35px; }
+    .contact-row { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 28px; opacity: 0; transform: translateX(-20px); transition: all 0.6s var(--ease-out-expo); }
+    .contact-row.visible { opacity: 1; transform: translateX(0); }
+    .contact-icon { width: 52px; height: 52px; background: var(--pink-subtle); border-radius: 16px; display: flex; align-items: center; justify-content: center; color: var(--pink); font-size: 20px; flex-shrink: 0; transition: all 0.3s var(--ease-spring); }
+    .contact-row:hover .contact-icon { background: var(--pink); color: var(--black); transform: scale(1.1); }
+    .contact-row div h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .contact-row div p { color: var(--gray-500); font-size: 14px; line-height: 1.6; }
+    .contact-form-box { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; padding: 40px; }
+    .field-group { margin-bottom: 20px; }
+    .field-group label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 13px; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; }
+    .field-group input, .field-group textarea, .field-group select { width: 100%; padding: 14px 18px; background: var(--black-elevated); border: 1px solid var(--gray-900); border-radius: 14px; color: var(--white); font-family: 'Inter', sans-serif; font-size: 15px; transition: all 0.3s var(--ease-out-expo); }
+    .field-group input:focus, .field-group textarea:focus, .field-group select:focus { outline: none; border-color: var(--pink); box-shadow: 0 0 0 4px rgba(255, 157, 226, 0.1); }
+    .field-group textarea { min-height: 120px; resize: vertical; }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .map-frame { border-radius: 24px; overflow: hidden; margin-top: 50px; border: 1px solid var(--gray-900); max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .map-frame iframe { width: 100%; height: 400px; border: none; filter: grayscale(100%) invert(92%) contrast(83%); }
+
+    .track-section { max-width: 600px; margin: 0 auto; padding: 40px 30px; }
+    .track-input-group { display: flex; gap: 12px; margin-bottom: 30px; }
+    .track-input-group input { flex: 1; padding: 14px 20px; background: var(--black-elevated); border: 1px solid var(--gray-900); border-radius: 14px; color: var(--white); font-size: 15px; transition: all 0.3s; }
+    .track-input-group input:focus { outline: none; border-color: var(--pink); box-shadow: 0 0 0 4px rgba(255, 157, 226, 0.1); }
+    .track-result { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 20px; padding: 30px; display: none; }
+    .track-result.show { display: block; animation: fadeInUp 0.5s var(--ease-out-expo); }
+    .track-timeline { display: flex; flex-direction: column; gap: 0; margin-top: 20px; }
+    .timeline-item { display: flex; gap: 16px; padding: 16px 0; position: relative; }
+    .timeline-item::before { content: ''; position: absolute; left: 11px; top: 40px; bottom: -16px; width: 2px; background: var(--gray-900); }
+    .timeline-item:last-child::before { display: none; }
+    .timeline-dot { width: 24px; height: 24px; border-radius: 50%; background: var(--gray-900); border: 2px solid var(--gray-800); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--gray-600); }
+    .timeline-dot.active { background: var(--pink); border-color: var(--pink); color: var(--black); box-shadow: 0 0 15px var(--pink-glow); }
+    .timeline-content h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .timeline-content p { font-size: 13px; color: var(--gray-500); }
+
+    .cart-backdrop { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.7); z-index: 2000; opacity: 0; visibility: hidden; transition: all 0.4s; }
+    .cart-backdrop.show { opacity: 1; visibility: visible; }
+    .cart-drawer { position: fixed; top: 0; right: 0; width: 440px; max-width: 100%; height: 100%; background: var(--black-card); border-left: 1px solid var(--gray-900); z-index: 2001; transform: translateX(100%); transition: transform 0.5s var(--ease-out-expo); display: flex; flex-direction: column; }
+    .cart-drawer.show { transform: translateX(0); }
+    .cart-drawer-header { padding: 28px 32px; border-bottom: 1px solid var(--gray-900); display: flex; justify-content: space-between; align-items: center; }
+    .cart-drawer-header h3 { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; }
+    .cart-close-btn { color: var(--gray-500); font-size: 22px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; transition: all 0.3s; }
+    .cart-close-btn:hover { background: var(--black-elevated); color: var(--danger); }
+    .cart-drawer-body { flex: 1; overflow-y: auto; padding: 20px 32px; }
+    .cart-empty-state { text-align: center; padding: 80px 20px; color: var(--gray-600); }
+    .cart-empty-state i { font-size: 64px; margin-bottom: 20px; opacity: 0.3; }
+    .cart-item-row { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--gray-900); animation: slideInRight 0.4s var(--ease-out-expo); }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+    .cart-item-img { width: 72px; height: 72px; border-radius: 14px; overflow: hidden; background: var(--black-elevated); flex-shrink: 0; }
+    .cart-item-img img { width: 100%; height: 100%; object-fit: cover; }
+    .cart-item-details { flex: 1; }
+    .cart-item-name { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+    .cart-item-price { color: var(--pink); font-weight: 700; font-size: 15px; }
+    .cart-item-actions { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+    .cart-qty { display: flex; align-items: center; gap: 10px; background: var(--black-elevated); border-radius: 10px; padding: 3px; }
+    .cart-qty button { width: 28px; height: 28px; border-radius: 8px; color: var(--white); cursor: pointer; font-size: 13px; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+    .cart-qty button:hover { background: var(--pink); color: var(--black); }
+    .cart-qty span { font-weight: 600; min-width: 24px; text-align: center; font-size: 14px; }
+    .cart-remove { color: var(--gray-600); font-size: 15px; transition: all 0.3s; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+    .cart-remove:hover { color: var(--danger); background: rgba(239, 68, 68, 0.1); }
+    .cart-drawer-footer { padding: 28px 32px; border-top: 1px solid var(--gray-900); background: var(--black); }
+    .cart-total-line { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; color: var(--gray-500); }
+    .cart-total-line.grand { font-size: 20px; font-weight: 700; color: var(--white); border-top: 1px solid var(--gray-900); padding-top: 14px; margin-top: 14px; }
+    .cart-total-line.grand span { color: var(--pink); }
+    .checkout-action { width: 100%; background: var(--pink); color: var(--black); padding: 16px; border-radius: 16px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 15px; cursor: pointer; transition: all 0.3s var(--ease-out-expo); margin-top: 16px; letter-spacing: 0.5px; }
+    .checkout-action:hover { background: var(--pink-dark); transform: scale(1.02); box-shadow: 0 4px 20px rgba(255, 157, 226, 0.3); }
+
+    .checkout-wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 120px 30px 60px; }
+    .checkout-panel { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; padding: 40px; }
+    .checkout-panel h2 { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 30px; display: flex; align-items: center; gap: 12px; }
+    .checkout-panel h2 i { color: var(--pink); }
+    .summary-panel { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; padding: 40px; height: fit-content; position: sticky; top: 100px; }
+    .summary-panel h2 { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 30px; display: flex; align-items: center; gap: 12px; }
+    .summary-line { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--gray-900); font-size: 15px; }
+    .summary-line.total { font-size: 20px; font-weight: 700; border-top: 2px solid var(--pink); border-bottom: none; padding-top: 20px; margin-top: 10px; }
+    .summary-line.total span { color: var(--pink); }
+    .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 24px; }
+    .payment-option { background: var(--black-elevated); border: 2px solid var(--gray-900); border-radius: 14px; padding: 18px; text-align: center; cursor: pointer; transition: all 0.3s var(--ease-out-expo); }
+    .payment-option:hover, .payment-option.selected { border-color: var(--pink); background: rgba(255, 157, 226, 0.05); }
+    .payment-option i { font-size: 24px; margin-bottom: 10px; display: block; color: var(--pink); }
+    .payment-option span { font-size: 13px; font-weight: 500; color: var(--gray-400); }
+
+    .account-wrap { display: grid; grid-template-columns: 280px 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 120px 30px 60px; }
+    .account-sidebar { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; padding: 35px 25px; height: fit-content; }
+    .account-avatar-lg { width: 72px; height: 72px; background: var(--pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--black); margin: 0 auto 16px; font-weight: 700; }
+    .account-sidebar h3 { text-align: center; font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .account-sidebar .email { text-align: center; color: var(--gray-500); font-size: 13px; margin-bottom: 30px; }
+    .account-menu { list-style: none; }
+    .account-menu li { margin-bottom: 4px; }
+    .account-menu a { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px; color: var(--gray-500); text-decoration: none; font-size: 14px; font-weight: 500; transition: all 0.3s var(--ease-out-expo); cursor: pointer; }
+    .account-menu a:hover, .account-menu a.active { background: var(--pink-subtle); color: var(--pink); }
+    .account-panel { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; padding: 40px; }
+    .account-panel h2 { font-family: 'Inter', sans-serif; font-size: 22px; font-weight: 600; margin-bottom: 30px; }
+    .orders-grid { display: flex; flex-direction: column; gap: 16px; }
+    .order-item { background: var(--black-elevated); border: 1px solid var(--gray-900); border-radius: 18px; padding: 28px; transition: all 0.3s var(--ease-out-expo); }
+    .order-item:hover { border-color: rgba(255, 157, 226, 0.2); transform: translateX(4px); }
+    .order-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+    .order-id { font-weight: 700; color: var(--pink); font-size: 15px; }
+    .order-status { padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .order-status.pending { background: rgba(245, 158, 11, 0.12); color: var(--warning); }
+    .order-status.processing { background: var(--pink-subtle); color: var(--pink); }
+    .order-status.delivered { background: rgba(34, 197, 94, 0.12); color: var(--success); }
+    .order-status.shipped { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
+    .order-status.cancelled { background: rgba(239, 68, 68, 0.12); color: var(--danger); }
+    .order-info { color: var(--gray-500); font-size: 14px; line-height: 1.7; }
+    .order-amount { font-size: 20px; font-weight: 700; color: var(--pink); margin-top: 12px; }
+
+    .chat-float { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+    .chat-window { position: absolute; bottom: 75px; right: 0; width: 380px; max-width: calc(100vw - 60px); background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 24px; overflow: hidden; display: none; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .chat-window.show { display: flex; flex-direction: column; animation: chatSlideUp 0.4s var(--ease-out-expo); }
+    @keyframes chatSlideUp { from { opacity: 0; transform: translateY(20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    .chat-top { background: var(--pink); color: var(--black); padding: 22px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .chat-top h4 { font-size: 15px; font-weight: 700; }
+    .chat-top small { opacity: 0.7; font-size: 12px; }
+    .chat-close { color: var(--black); font-size: 20px; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 8px; transition: background 0.3s; }
+    .chat-close:hover { background: rgba(0,0,0,0.1); }
+    .chat-messages { padding: 20px; max-height: 320px; overflow-y: auto; }
+    .msg { background: var(--black-elevated); border-radius: 16px; padding: 16px; margin-bottom: 14px; font-size: 14px; line-height: 1.7; animation: msgAppear 0.3s var(--ease-out-expo); }
+    @keyframes msgAppear { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    .msg.bot { border-left: 3px solid var(--pink); }
+    .msg.user { border-right: 3px solid var(--gray-700); margin-left: 20px; }
+    .chat-input-wrap { padding: 16px 20px; border-top: 1px solid var(--gray-900); display: flex; gap: 10px; }
+    .chat-input { flex: 1; padding: 12px 18px; background: var(--black-elevated); border: 1px solid var(--gray-900); border-radius: 24px; color: var(--white); font-family: 'Inter', sans-serif; font-size: 14px; transition: all 0.3s; }
+    .chat-input:focus { outline: none; border-color: var(--pink); box-shadow: 0 0 0 3px rgba(255, 157, 226, 0.1); }
+    .chat-send-btn { width: 44px; height: 44px; background: var(--pink); border-radius: 50%; color: var(--black); cursor: pointer; transition: all 0.3s var(--ease-spring); display: flex; align-items: center; justify-content: center; }
+    .chat-send-btn:hover { background: var(--pink-dark); transform: scale(1.1); }
+    .chat-trigger { width: 60px; height: 60px; background: var(--pink); border-radius: 50%; color: var(--black); font-size: 24px; box-shadow: 0 4px 20px rgba(255, 157, 226, 0.4); transition: all 0.3s var(--ease-spring); display: flex; align-items: center; justify-content: center; animation: float 3s ease-in-out infinite; }
+    .chat-trigger:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255, 157, 226, 0.6); }
+
+    .wa-float { position: fixed; bottom: 30px; left: 30px; z-index: 1000; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: all 0.3s var(--ease-spring); animation: float 3s ease-in-out infinite 0.5s; }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6); }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); z-index: 3000; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s; padding: 20px; }
+    .modal-overlay.show { display: flex; opacity: 1; }
+    .modal-box { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 28px; padding: 40px; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; transform: scale(0.9) translateY(20px); transition: transform 0.4s var(--ease-out-expo); position: relative; }
+    .modal-overlay.show .modal-box { transform: scale(1) translateY(0); }
+    .modal-close { position: absolute; top: 20px; right: 20px; color: var(--gray-600); font-size: 22px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 10px; transition: all 0.3s; }
+    .modal-close:hover { background: var(--black-elevated); color: var(--danger); }
+    .modal-head { text-align: center; margin-bottom: 30px; }
+    .modal-head h2 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; margin-bottom: 8px; }
+    .modal-head p { color: var(--gray-500); font-size: 14px; }
+    .modal-tabs { display: flex; gap: 8px; margin-bottom: 25px; background: var(--black-elevated); border-radius: 14px; padding: 5px; }
+    .modal-tab { flex: 1; padding: 12px; background: none; color: var(--gray-500); font-family: 'Inter', sans-serif; font-weight: 600; cursor: pointer; border-radius: 10px; transition: all 0.3s var(--ease-out-expo); font-size: 14px; }
+    .modal-tab.active { background: var(--pink); color: var(--black); }
+    .modal-form { display: none; }
+    .modal-form.active { display: block; animation: fadeInUp 0.4s var(--ease-out-expo); }
+    .alert { padding: 14px; border-radius: 12px; font-size: 14px; margin-bottom: 16px; display: none; }
+    .alert.show { display: block; }
+    .alert-error { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: var(--danger); }
+    .alert-success { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); color: var(--success); }
+
+    .toast-stack { position: fixed; top: 90px; left: 50%; transform: translateX(-50%); z-index: 4000; display: flex; flex-direction: column; gap: 10px; pointer-events: none; }
+    .toast { background: var(--black-card); border: 1px solid var(--gray-900); border-radius: 16px; padding: 16px 24px; display: flex; align-items: center; gap: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: toastSlide 0.4s var(--ease-out-expo); pointer-events: auto; min-width: 320px; }
+    @keyframes toastSlide { from { opacity: 0; transform: translate(-50%, -20px); } to { opacity: 1; transform: translate(-50%, 0); } }
+    .toast.ok { border-color: rgba(34, 197, 94, 0.3); }
+    .toast.err { border-color: rgba(239, 68, 68, 0.3); }
+    .toast i { font-size: 20px; }
+    .toast.ok i { color: var(--success); }
+    .toast.err i { color: var(--danger); }
+
+    .footer { background: #020202; border-top: 1px solid var(--gray-900); padding: 80px 30px 40px; position: relative; z-index: 5; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; max-width: 1200px; margin: 0 auto 60px; }
+    .footer-brand .logo { margin-bottom: 20px; }
+    .footer-brand p { color: var(--gray-600); font-size: 14px; line-height: 1.8; max-width: 300px; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 24px; }
+    .footer-socials a { width: 42px; height: 42px; border-radius: 50%; background: var(--black-card); border: 1px solid var(--gray-900); display: flex; align-items: center; justify-content: center; color: var(--gray-500); font-size: 16px; transition: all 0.3s var(--ease-out-expo); position: relative; overflow: hidden; }
+    .footer-socials a::before { content: ''; position: absolute; inset: 0; background: var(--pink); transform: scale(0); border-radius: 50%; transition: transform 0.3s var(--ease-spring); z-index: -1; }
+    .footer-socials a:hover { color: var(--black); border-color: var(--pink); transform: translateY(-3px); }
+    .footer-socials a:hover::before { transform: scale(1); }
+    .footer h4 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 600; margin-bottom: 24px; color: var(--pink); }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 14px; }
+    .footer-links a { color: var(--gray-600); text-decoration: none; font-size: 14px; transition: all 0.3s; display: inline-block; }
+    .footer-links a:hover { color: var(--pink); transform: translateX(4px); }
+    .footer-contact p { color: var(--gray-600); font-size: 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .footer-contact i { color: var(--pink); width: 18px; }
+    .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid var(--gray-900); color: var(--gray-700); font-size: 13px; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes shimmer { 0% { background-position: -1000px 0; } 100% { background-position: 1000px 0; } }
+
+    .page { display: none; animation: fadeInUp 0.6s var(--ease-out-expo); }
+    .page.active { display: block; }
+
+    .skeleton { background: linear-gradient(90deg, var(--black-elevated) 25%, var(--gray-900) 50%, var(--black-elevated) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 12px; }
+    .spinner { width: 20px; height: 20px; border: 2px solid var(--pink); border-radius: 50%; border-top-color: transparent; animation: spin 0.8s linear infinite; display: inline-block; }
+    .page-loader { position: fixed; inset: 0; background: var(--black); z-index: 9999; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 20px; transition: opacity 0.5s, visibility 0.5s; }
+    .page-loader.hidden { opacity: 0; visibility: hidden; }
+    .page-loader .loader-flower { width: 60px; height: 60px; position: relative; }
+    .page-loader .loader-flower svg { width: 100%; height: 100%; animation: spin 3s linear infinite; }
+    .page-loader p { color: var(--gray-500); font-size: 14px; letter-spacing: 2px; text-transform: uppercase; }
+
+    @media (max-width: 1024px) {
+        .about-grid, .contact-grid, .checkout-wrap, .account-wrap, .detail-grid { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+        .summary-panel { position: static; }
+    }
+    @media (max-width: 768px) {
+        .header-inner { padding: 0 20px; height: 60px; }
+        .nav-desktop { display: none; }
+        .mobile-toggle { display: flex; }
+        .mobile-nav { display: block; }
+        .hero h1 { font-size: 2.4rem; }
+        .section { padding: 70px 20px; }
+        .products-grid { grid-template-columns: 1fr; }
+        .stats-row { grid-template-columns: 1fr; }
+        .cart-drawer { width: 100%; }
+        .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        .footer-brand p { max-width: none; }
+        .footer-socials { justify-content: center; }
+        .chat-window { width: calc(100vw - 40px); right: -10px; }
+        .field-row { grid-template-columns: 1fr; }
+        .payment-grid { grid-template-columns: 1fr; }
+        .detail-meta { flex-direction: column; gap: 16px; }
+        .hero-buttons { flex-direction: column; align-items: center; }
+        .hero-buttons .btn { width: 100%; max-width: 300px; justify-content: center; }
+        .track-input-group { flex-direction: column; }
+    }
+    [dir="rtl"] .cart-drawer { right: auto; left: 0; transform: translateX(-100%); }
+    [dir="rtl"] .cart-drawer.show { transform: translateX(0); }
+    [dir="rtl"] .chat-float { right: auto; left: 30px; }
+    [dir="rtl"] .chat-window { right: auto; left: 0; }
+    [dir="rtl"] .wa-float { left: auto; right: 30px; }
+    [dir="rtl"] .nav-desktop a::after { left: auto; right: 0; }
+    [dir="rtl"] .modal-close { right: auto; left: 20px; }
+    [dir="rtl"] .search-bar i { right: auto; left: 20px; }
+    [dir="rtl"] .contact-row { transform: translateX(20px); }
+    [dir="rtl"] .contact-row.visible { transform: translateX(0); }
+    [dir="rtl"] .cart-item-row { animation-name: slideInLeft; }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    }
+    </style>
+</head>
+<body>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-flower">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 10 C50 10 30 30 30 50 C30 70 50 90 50 90 C50 90 70 70 70 50 C70 30 50 10 50 10Z" stroke="#FF9DE2" stroke-width="2" fill="none"/>
+                <path d="M10 50 C10 50 30 30 50 30 C70 30 90 50 90 50 C90 50 70 70 50 70 C30 70 10 50 10 50Z" stroke="#FF9DE2" stroke-width="2" fill="none"/>
+                <circle cx="50" cy="50" r="8" fill="#FF9DE2"/>
+            </svg>
+        </div>
+        <p>Azhar Al-Sanabel</p>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <header class="header" id="mainHeader">
+        <div class="header-inner">
+            <a href="#" class="logo" onclick="goTo('home'); return false;" aria-label="Azhar Al-Sanabel Home">
+                <div class="logo-mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2C12 2 8 6 8 10C8 14 12 18 12 18C12 18 16 14 16 10C16 6 12 2 12 2Z"/>
+                        <path d="M2 12C2 12 6 8 10 8C14 8 18 12 18 12C18 12 14 16 10 16C6 16 2 12 2 12Z"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <div class="logo-title" data-en="Azhar Al-Sanabel" data-ar="أزهار السنابل">Azhar Al-Sanabel</div>
+                    <div class="logo-subtitle" data-en="LUXURY FLOWERS" data-ar="زهور فاخرة">LUXURY FLOWERS</div>
+                </div>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <ul class="nav-desktop" id="mainNav">
+                    <li><a href="#" class="active" onclick="goTo('home'); return false;" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#" onclick="goTo('products'); return false;" data-en="Products" data-ar="المنتجات">Products</a></li>
+                    <li><a href="#" onclick="goTo('about'); return false;" data-en="About" data-ar="من نحن">About</a></li>
+                    <li><a href="#" onclick="goTo('contact'); return false;" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="lang-switch" onclick="toggleLanguage()" id="langBtn" aria-label="Toggle language">AR</button>
+                <button class="cart-trigger" onclick="toggleCart()" aria-label="Shopping cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <div id="userArea">
+                    <button class="login-btn" onclick="openAuth()" id="loginBtn">
+                        <i class="fas fa-user"></i> <span data-en="Sign In" data-ar="تسجيل الدخول">Sign In</span>
+                    </button>
+                </div>
+                <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="#" onclick="goTo('home'); toggleMobileNav(); return false;" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="#" onclick="goTo('products'); toggleMobileNav(); return false;" data-en="Products" data-ar="المنتجات">Products</a></li>
+            <li><a href="#" onclick="goTo('about'); toggleMobileNav(); return false;" data-en="About" data-ar="من نحن">About</a></li>
+            <li><a href="#" onclick="goTo('contact'); toggleMobileNav(); return false;" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+            <li><a href="#" onclick="goTo('track'); toggleMobileNav(); return false;" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a></li>
+        </ul>
+    </nav>
+
+    <div class="toast-stack" id="toastStack" role="status" aria-live="polite"></div>
+
+    <a href="https://wa.me/962791234567" class="wa-float" target="_blank" rel="noopener" title="WhatsApp" aria-label="Contact on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <div class="chat-float">
+        <div class="chat-window" id="chatWindow" role="dialog" aria-label="Chat support">
+            <div class="chat-top">
+                <div>
+                    <h4><i class="fas fa-robot"></i> <span data-en="AI Support" data-ar="الدعم الآلي">AI Support</span></h4>
+                    <small data-en="We reply instantly" data-ar="نرد فوراً">We reply instantly</small>
+                </div>
+                <button class="chat-close" onclick="toggleChat()" aria-label="Close chat"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="msg bot">
+                    <strong data-en="Welcome to Azhar Al-Sanabel!" data-ar="أهلاً بك في أزهار السنابل!">Welcome to Azhar Al-Sanabel!</strong><br><br>
+                    <span data-en="I am your smart assistant. How can I help you today?" data-ar="أنا مساعدك الذكي، كيف يمكنني مساعدتك؟">I am your smart assistant. How can I help you today?</span><br><br>
+                    <small>1. <span data-en="Product inquiry" data-ar="استفسار عن منتج">Product inquiry</span></small><br>
+                    <small>2. <span data-en="Track order" data-ar="متابعة طلب">Track order</span></small><br>
+                    <small>3. <span data-en="Delivery info" data-ar="مواعيد التوصيل">Delivery info</span></small><br>
+                    <small>4. <span data-en="Talk to human" data-ar="التحدث مع موظف">Talk to human</span></small>
+                </div>
+            </div>
+            <div class="chat-input-wrap">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message..." onkeypress="if(event.key==='Enter')sendChat()" aria-label="Chat message">
+                <button class="chat-send-btn" onclick="sendChat()" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="chat-trigger" onclick="toggleChat()" aria-label="Open chat">
+            <i class="fas fa-comments"></i>
+        </button>
+    </div>
+
+    <div class="cart-backdrop" id="cartBackdrop" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer" role="dialog" aria-label="Shopping cart">
+        <div class="cart-drawer-header">
+            <h3><i class="fas fa-shopping-bag"></i> <span data-en="Your Cart" data-ar="سلة المشتريات">Your Cart</span></h3>
+            <button class="cart-close-btn" onclick="toggleCart()" aria-label="Close cart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-drawer-body" id="cartBody">
+            <div class="cart-empty-state">
+                <i class="fas fa-shopping-basket"></i>
+                <p data-en="Your cart is empty" data-ar="السلة فارغة">Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-drawer-footer" id="cartFooter" style="display:none">
+            <div class="cart-total-line">
+                <span data-en="Subtotal" data-ar="المجموع الفرعي">Subtotal</span>
+                <span id="cartSubtotal">0 JOD</span>
+            </div>
+            <div class="cart-total-line">
+                <span data-en="Shipping" data-ar="التوصيل">Shipping</span>
+                <span>5 JOD</span>
+            </div>
+            <div class="cart-total-line grand">
+                <span data-en="Total" data-ar="الإجمالي">Total</span>
+                <span id="cartGrandTotal">0 JOD</span>
+            </div>
+            <button class="checkout-action" onclick="goTo('checkout'); toggleCart();">
+                <i class="fas fa-credit-card"></i> <span data-en="Checkout" data-ar="إتمام الشراء">Checkout</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="authOverlay" role="dialog" aria-label="Authentication" aria-modal="true">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeAuth()" aria-label="Close"><i class="fas fa-times"></i></button>
+            <div class="modal-head">
+                <h2 data-en="Azhar Al-Sanabel" data-ar="أزهار السنابل">Azhar Al-Sanabel</h2>
+                <p data-en="Sign in to your account or create a new one" data-ar="تسجيل الدخول أو إنشاء حساب جديد">Sign in to your account or create a new one</p>
+            </div>
+            <div class="alert alert-error" id="authError" role="alert"></div>
+            <div class="alert alert-success" id="authSuccess" role="alert"></div>
+            <div class="modal-tabs" role="tablist">
+                <button class="modal-tab active" onclick="switchTab('login')" role="tab" aria-selected="true" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</button>
+                <button class="modal-tab" onclick="switchTab('register')" role="tab" aria-selected="false" data-en="Sign Up" data-ar="إنشاء حساب">Sign Up</button>
+            </div>
+            <form class="modal-form active" id="loginForm" onsubmit="doLogin(event)">
+                <div class="field-group">
+                    <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    <input type="email" id="loginEmail" placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="field-group">
+                    <label data-en="Password" data-ar="كلمة المرور">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="btn btn-pink" style="width:100%">
+                    <i class="fas fa-sign-in-alt"></i> <span data-en="Sign In" data-ar="تسجيل الدخول">Sign In</span>
+                </button>
+            </form>
+            <form class="modal-form" id="registerForm" onsubmit="doRegister(event)">
+                <div class="field-group">
+                    <label data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                    <input type="text" id="regName" placeholder="John Doe" required autocomplete="name">
+                </div>
+                <div class="field-group">
+                    <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    <input type="email" id="regEmail" placeholder="your@email.com" required autocomplete="email">
+                </div>
+                <div class="field-group">
+                    <label data-en="Phone" data-ar="رقم الهاتف">Phone</label>
+                    <input type="tel" id="regPhone" placeholder="0791234567" required autocomplete="tel">
+                    <small style="color:var(--gray-600);font-size:12px" data-en="Must start with 07 and be 10 digits" data-ar="يجب أن يبدأ بـ 07 ويتكون من 10 أرقام">Must start with 07 and be 10 digits</small>
+                </div>
+                <div class="field-group">
+                    <label data-en="Password" data-ar="كلمة المرور">Password</label>
+                    <input type="password" id="regPassword" placeholder="Min 8 chars, uppercase, lowercase, number" required minlength="8" autocomplete="new-password">
+                </div>
+                <button type="submit" class="btn btn-pink" style="width:100%">
+                    <i class="fas fa-user-plus"></i> <span data-en="Create Account" data-ar="إنشاء حساب">Create Account</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="page active" id="page-home">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span data-en="Premium Flower Shop in Irbid, Jordan" data-ar="متجر زهور فاخر في إربد، الأردن">Premium Flower Shop in Irbid, Jordan</span>
+                </div>
+                <h1>
+                    <span data-en="Make Every Moment" data-ar="اجعل كل لحظة">Make Every Moment</span><br>
+                    <em class="accent" data-en="Bloom with Flowers" data-ar="تتفتح بالزهور">Bloom with Flowers</em>
+                </h1>
+                <p class="hero-desc" data-en="We offer the finest natural flower bouquets, bridal arrangements, luxury gifts, and wedding car decorations. Fast delivery to all Jordan governorates." data-ar="نقدم أجمل باقات الزهور الطبيعية، تنسيقات العروس، الهدايا الفاخرة، وتزيين سيارات الأفراح. توصيل سريع لجميع محافظات الأردن.">
+                    We offer the finest natural flower bouquets, bridal arrangements, luxury gifts, and wedding car decorations. Fast delivery to all Jordan governorates.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-pink" onclick="goTo('products'); return false;">
+                        <i class="fas fa-shopping-bag"></i> <span data-en="Shop Now" data-ar="تسوق الآن">Shop Now</span>
+                    </a>
+                    <a href="#" class="btn btn-outline" onclick="goTo('contact'); return false;">
+                        <i class="fas fa-phone"></i> <span data-en="Contact Us" data-ar="تواصل معنا">Contact Us</span>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://instagram.com/azhar.alsanabel" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/azhar.alsanabel" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://tiktok.com/@azhar.alsanabel" target="_blank" rel="noopener" title="TikTok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/962791234567" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span data-en="Scroll" data-ar="اسحب">Scroll</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <h2 data-en="Signature Services" data-ar="خدماتنا المميزة">Signature Services</h2>
+                <div class="section-line"></div>
+                <p data-en="A variety of luxury floral services to meet all your needs" data-ar="مجموعة متنوعة من الخدمات الزهرية الفاخرة لتلبية جميع احتياجاتك">A variety of luxury floral services to meet all your needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2C12 2 8 6 8 10C8 14 12 18 12 18C12 18 16 14 16 10C16 6 12 2 12 2Z"/>
+                            <path d="M2 12C2 12 6 8 10 8C14 8 18 12 18 12C18 12 14 16 10 16C6 16 2 12 2 12Z"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Natural Bouquets" data-ar="باقات طبيعية">Natural Bouquets</h3>
+                    <p data-en="Luxurious natural rose bouquets in stunning colors" data-ar="باقات ورد طبيعية فاخرة بألوانها المذهلة">Luxurious natural rose bouquets in stunning colors</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 3C12 3 7 8 7 13C7 18 12 21 12 21C12 21 17 18 17 13C17 8 12 3 12 3Z"/>
+                            <path d="M12 8V13"/>
+                            <circle cx="12" cy="16" r="1"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Bridal Bouquets" data-ar="باقات العروس">Bridal Bouquets</h3>
+                    <p data-en="Elegant and unique designs for your special day" data-ar="تصاميم أنيقة ومميزة ليومك الخاص">Elegant and unique designs for your special day</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="6" width="18" height="14" rx="2"/>
+                            <path d="M3 10H21"/>
+                            <path d="M8 6L10 2H14L16 6"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Luxury Gifts" data-ar="هدايا فاخرة">Luxury Gifts</h3>
+                    <p data-en="Premium gift boxes decorated with natural flowers" data-ar="صناديق هدايا فاخرة مزينة بالزهور الطبيعية">Premium gift boxes decorated with natural flowers</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M5 17H19V19C19 20.1 18.1 21 17 21H7C5.9 21 5 20.1 5 19V17Z"/>
+                            <path d="M5 11H19V17H5V11Z"/>
+                            <path d="M7 11V7C7 5.9 7.9 5 9 5H15C16.1 5 17 5.9 17 7V11"/>
+                            <circle cx="12" cy="14" r="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 data-en="Car Decoration" data-ar="تزيين السيارات">Car Decoration</h3>
+                    <p data-en="Professional wedding car decoration service" data-ar="خدمة احترافية لتزيين سيارات الأفراح">Professional wedding car decoration service</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section products-section">
+            <div class="section-header">
+                <h2 data-en="Featured Products" data-ar="منتجات مميزة">Featured <em>Products</em></h2>
+                <div class="section-line"></div>
+                <p data-en="Browse our premium collection of flowers and gifts" data-ar="تصفح مجموعتنا الفاخرة من الزهور والهدايا">Browse our premium collection of flowers and gifts</p>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-chip active" onclick="filterProds('all')" data-en="All" data-ar="الكل">All</button>
+                <button class="filter-chip" onclick="filterProds('bouquets')" data-en="Bouquets" data-ar="باقات">Bouquets</button>
+                <button class="filter-chip" onclick="filterProds('bridal')" data-en="Bridal" data-ar="عروس">Bridal</button>
+                <button class="filter-chip" onclick="filterProds('gifts')" data-en="Gifts" data-ar="هدايا">Gifts</button>
+                <button class="filter-chip" onclick="filterProds('decor')" data-en="Decor" data-ar="تزيين">Decor</button>
+            </div>
+            <div class="products-grid" id="homeProducts"></div>
+            <div style="text-align:center;margin-top:50px">
+                <a href="#" class="btn btn-outline" onclick="goTo('products'); return false;">
+                    <i class="fas fa-th-large"></i> <span data-en="View All Products" data-ar="عرض جميع المنتجات">View All Products</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div class="page" id="page-products">
+        <section class="section" style="padding-top:110px">
+            <div class="section-header">
+                <h2 data-en="All Products" data-ar="جميع المنتجات">All <em>Products</em></h2>
+                <div class="section-line"></div>
+                <p data-en="Discover our wide range of luxury flowers and gifts" data-ar="اكتشف تشكيلتنا الواسعة من الزهور والهدايا الفاخرة">Discover our wide range of luxury flowers and gifts</p>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="productSearch" placeholder="Search products..." oninput="searchProducts(this.value)" data-en-placeholder="Search products..." data-ar-placeholder="ابحث عن منتجات...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-bar">
+                <button class="filter-chip active" onclick="filterProds('all')" data-en="All" data-ar="الكل">All</button>
+                <button class="filter-chip" onclick="filterProds('bouquets')" data-en="Bouquets" data-ar="باقات">Bouquets</button>
+                <button class="filter-chip" onclick="filterProds('bridal')" data-en="Bridal" data-ar="عروس">Bridal</button>
+                <button class="filter-chip" onclick="filterProds('gifts')" data-en="Gifts" data-ar="هدايا">Gifts</button>
+                <button class="filter-chip" onclick="filterProds('decor')" data-en="Decor" data-ar="تزيين">Decor</button>
+            </div>
+            <div class="products-grid" id="allProducts"></div>
+        </section>
+    </div>
+
+    <div class="page" id="page-product">
+        <div class="detail-grid" id="detailContainer"></div>
+    </div>
+
+    <div class="page" id="page-about">
+        <section class="section" style="padding-top:110px">
+            <div class="section-header">
+                <h2 data-en="About <em>Us</em>" data-ar="من <em>نحن</em>">About <em>Us</em></h2>
+                <div class="section-line"></div>
+                <p data-en="The story of Azhar Al-Sanabel and our mission" data-ar="قصة أزهار السنابل ورسالتنا">The story of Azhar Al-Sanabel and our mission</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-visual">
+                    <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=700&h=600&fit=crop" alt="About Azhar Al-Sanabel" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <h2 data-en="Azhar <em>Al-Sanabel</em>" data-ar="أزهار <em>السنابل</em>">Azhar <em>Al-Sanabel</em></h2>
+                    <p data-en="We are a premium flower shop based in Irbid, Jordan. We believe flowers are not just gifts, but a language of emotion that expresses the deepest feelings." data-ar="نحن متجر زهور فاخر مقره إربد، الأردن. نؤمن بأن الزهور ليست مجرد هدايا، بل هي لغة عاطفة تعبّر عن أعمق المشاعر.">
+                        We are a premium flower shop based in Irbid, Jordan. We believe flowers are not just gifts, but a language of emotion that expresses the deepest feelings.
+                    </p>
+                    <p data-en="We offer a wide range of premium natural flowers, elegant bridal bouquets, unique floral gifts, and professional wedding car decoration services. We cover all Jordan governorates with fast and reliable delivery." data-ar="نقدم تشكيلة واسعة من الزهور الطبيعية الفاخرة، باقات العروس الأنيقة، الهدايا الزهرية المميزة، وخدمات تزيين السيارات الاحترافية. نغطي جميع محافظات الأردن بتوصيل سريع وموثوق.">
+                        We offer a wide range of premium natural flowers, elegant bridal bouquets, unique floral gifts, and professional wedding car decoration services. We cover all Jordan governorates with fast and reliable delivery.
+                    </p>
+                    <p data-en="Our goal is to be the first choice for everyone seeking beauty and excellence in the world of flowers, while maintaining the highest quality and service standards." data-ar="هدفنا أن نكون الخيار الأول لكل من يبحث عن الجمال والتميز في عالم الزهور، مع الالتزام بأعلى معايير الجودة والخدمة.">
+                        Our goal is to be the first choice for everyone seeking beauty and excellence in the world of flowers, while maintaining the highest quality and service standards.
+                    </p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="stat-num">10+</div>
+                            <div class="stat-label" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">5000+</div>
+                            <div class="stat-label" data-en="Happy Customers" data-ar="عميل سعيد">Happy Customers</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">200+</div>
+                            <div class="stat-label" data-en="Weddings" data-ar="حفل زفاف">Weddings</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-num">50+</div>
+                            <div class="stat-label" data-en="Flower Types" data-ar="نوع زهرة">Flower Types</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="page" id="page-contact">
+        <section class="section" style="padding-top:110px">
+            <div class="section-header">
+                <h2 data-en="Contact <em>Us</em>" data-ar="تواصل <em>معنا</em>">Contact <em>Us</em></h2>
+                <div class="section-line"></div>
+                <p data-en="We are here to help, don't hesitate to reach out" data-ar="نحن هنا لمساعدتك، لا تتردد في التواصل">We are here to help, don't hesitate to reach out</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 data-en="Contact Information" data-ar="معلومات التواصل">Contact Information</h3>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <h4 data-en="Location" data-ar="الموقع">Location</h4>
+                            <p>Irbid, Hashemite Kingdom of Jordan</p>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <h4 data-en="Phone" data-ar="الهاتف">Phone</h4>
+                            <p>+962 79 123 4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4 data-en="Email" data-ar="البريد الإلكتروني">Email</h4>
+                            <p>info@azhar-alsanabel.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <h4 data-en="Working Hours" data-ar="ساعات العمل">Working Hours</h4>
+                            <p data-en="Sat-Thu: 9AM - 9PM | Fri: 2PM - 9PM" data-ar="السبت-الخميس: 9ص - 9م | الجمعة: 2م - 9م">Sat-Thu: 9AM - 9PM | Fri: 2PM - 9PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/962791234567" target="_blank" rel="noopener" style="color:var(--pink)">+962 79 123 4567</a></p>
+                        </div>
+                    </div>
+                    <div class="hero-social" style="justify-content:flex-start;margin-top:30px">
+                        <a href="https://instagram.com/azhar.alsanabel" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/azhar.alsanabel" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://tiktok.com/@azhar.alsanabel" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://wa.me/962791234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-box">
+                    <h3 style="margin-bottom:25px" data-en="Send a Message" data-ar="أرسل رسالة">Send a Message</h3>
+                    <form onsubmit="sendContact(event)">
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label data-en="Name" data-ar="الاسم">Name</label>
+                                <input type="text" id="contactName" required placeholder="Your name" autocomplete="name">
+                            </div>
+                            <div class="field-group">
+                                <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                                <input type="email" id="contactEmail" required placeholder="your@email.com" autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label data-en="Phone" data-ar="رقم الهاتف">Phone</label>
+                                <input type="tel" id="contactPhone" placeholder="0791234567" autocomplete="tel">
+                            </div>
+                            <div class="field-group">
+                                <label data-en="Subject" data-ar="الموضوع">Subject</label>
+                                <input type="text" id="contactSubject" placeholder="Message subject">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label data-en="Message" data-ar="الرسالة">Message</label>
+                            <textarea id="contactMessage" required placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-pink" style="width:100%">
+                            <i class="fas fa-paper-plane"></i> <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-frame">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107776.9845949!2d35.828818!3d32.556963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c76916b8d25b1%3A0xdf5a9e1f2c2b5c0!2sIrbid!5e0!3m2!1sen!2sjo!4v1600000000000!5m2!1sen!2sjo" allowfullscreen loading="lazy" title="Shop Location"></iframe>
+            </div>
+        </section>
+    </div>
+
+    <div class="page" id="page-track">
+        <section class="section" style="padding-top:110px">
+            <div class="section-header">
+                <h2 data-en="Track <em>Order</em>" data-ar="تتبع <em>الطلب</em>">Track <em>Order</em></h2>
+                <div class="section-line"></div>
+                <p data-en="Enter your order ID to track your delivery status" data-ar="أدخل رقم طلبك لمتابعة حالة التوصيل">Enter your order ID to track your delivery status</p>
+            </div>
+            <div class="track-section">
+                <div class="track-input-group">
+                    <input type="text" id="trackOrderId" placeholder="AZH-XXXXXXXX" data-en-placeholder="AZH-XXXXXXXX" data-ar-placeholder="AZH-XXXXXXXX">
+                    <button class="btn btn-pink" onclick="trackOrder()">
+                        <i class="fas fa-search"></i> <span data-en="Track" data-ar="تتبع">Track</span>
+                    </button>
+                </div>
+                <div class="track-result" id="trackResult">
+                    <div id="trackContent"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="page" id="page-checkout">
+        <div class="checkout-wrap">
+            <div class="checkout-panel">
+                <h2><i class="fas fa-truck"></i> <span data-en="Shipping Information" data-ar="معلومات الشحن">Shipping Information</span></h2>
+                <form id="checkoutForm" onsubmit="doCheckout(event)">
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label data-en="Full Name" data-ar="الاسم الكامل">Full Name</label>
+                            <input type="text" id="coName" required placeholder="John Doe" autocomplete="name">
+                        </div>
+                        <div class="field-group">
+                            <label data-en="Phone" data-ar="رقم الهاتف">Phone</label>
+                            <input type="tel" id="coPhone" required placeholder="0791234567" autocomplete="tel">
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                        <input type="email" id="coEmail" required placeholder="your@email.com" autocomplete="email">
+                    </div>
+                    <div class="field-group">
+                        <label data-en="Shipping Address" data-ar="عنوان الشحن">Shipping Address</label>
+                        <input type="text" id="coAddress" required placeholder="Street, Building, Area" autocomplete="street-address">
+                    </div>
+                    <div class="field-row">
+                        <div class="field-group">
+                            <label data-en="City" data-ar="المدينة">City</label>
+                            <input type="text" id="coCity" required placeholder="Irbid" autocomplete="address-level2">
+                        </div>
+                        <div class="field-group">
+                            <label data-en="Governorate" data-ar="المحافظة">Governorate</label>
+                            <select id="coGovernorate" required>
+                                <option value="" data-en="Select Governorate" data-ar="اختر المحافظة">Select Governorate</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label data-en="Notes (Optional)" data-ar="ملاحظات (اختياري)">Notes (Optional)</label>
+                        <textarea id="coNotes" placeholder="Any special requests..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-pink" style="width:100%;margin-top:10px">
+                        <i class="fas fa-check-circle"></i> <span data-en="Place Order" data-ar="تأكيد الطلب">Place Order</span>
+                    </button>
+                </form>
+            </div>
+            <div class="summary-panel">
+                <h2><i class="fas fa-receipt"></i> <span data-en="Order Summary" data-ar="ملخص الطلب">Order Summary</span></h2>
+                <div id="summaryItems"></div>
+                <div class="summary-line">
+                    <span data-en="Shipping" data-ar="التوصيل">Shipping</span>
+                    <span>5 JOD</span>
+                </div>
+                <div class="summary-line total">
+                    <span data-en="Total" data-ar="الإجمالي">Total</span>
+                    <span id="summaryTotal">0 JOD</span>
+                </div>
+                <div style="margin-top:25px">
+                    <label style="display:block;margin-bottom:14px;font-weight:600;font-size:14px" data-en="Payment Method" data-ar="طريقة الدفع">Payment Method</label>
+                    <div class="payment-grid">
+                        <div class="payment-option selected" onclick="pickPayment(this, 'cash')">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <span data-en="Cash on Delivery" data-ar="نقداً عند الاستلام">Cash on Delivery</span>
+                        </div>
+                        <div class="payment-option" onclick="pickPayment(this, 'card')">
+                            <i class="fas fa-credit-card"></i>
+                            <span data-en="Credit Card" data-ar="بطاقة ائتمان">Credit Card</span>
+                        </div>
+                        <div class="payment-option" onclick="pickPayment(this, 'apple')">
+                            <i class="fab fa-apple"></i>
+                            <span>Apple Pay</span>
+                        </div>
+                        <div class="payment-option" onclick="pickPayment(this, 'mada')">
+                            <i class="fas fa-university"></i>
+                            <span>Mada</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="page-account">
+        <div class="account-wrap">
+            <div class="account-sidebar">
+                <div class="account-avatar-lg" id="accAvatar">G</div>
+                <h3 id="accName">Guest</h3>
+                <p class="email" id="accEmail">-</p>
+                <ul class="account-menu">
+                    <li><a href="#" class="active" onclick="showTab('profile'); return false;">
+                        <i class="fas fa-user"></i> <span data-en="Profile" data-ar="الملف الشخصي">Profile</span>
+                    </a></li>
+                    <li><a href="#" onclick="showTab('orders'); return false;">
+                        <i class="fas fa-shopping-bag"></i> <span data-en="My Orders" data-ar="طلباتي">My Orders</span>
+                    </a></li>
+                    <li><a href="#" onclick="showTab('password'); return false;">
+                        <i class="fas fa-key"></i> <span data-en="Password" data-ar="كلمة المرور">Password</span>
+                    </a></li>
+                    <li><a href="#" onclick="doLogout(); return false;">
+                        <i class="fas fa-sign-out-alt"></i> <span data-en="Logout" data-ar="تسجيل الخروج">Logout</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="account-panel" id="accountPanel">
+                <div id="panel-profile">
+                    <h2 data-en="Profile Settings" data-ar="إعدادات الملف الشخصي">Profile Settings</h2>
+                    <form onsubmit="updateProfile(event)">
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label data-en="Name" data-ar="الاسم">Name</label>
+                                <input type="text" id="profName" required autocomplete="name">
+                            </div>
+                            <div class="field-group">
+                                <label data-en="Phone" data-ar="رقم الهاتف">Phone</label>
+                                <input type="tel" id="profPhone" required autocomplete="tel">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                            <input type="email" id="profEmail" disabled style="opacity:0.5" autocomplete="email">
+                        </div>
+                        <div class="field-group">
+                            <label data-en="Address" data-ar="العنوان">Address</label>
+                            <input type="text" id="profAddress" placeholder="Your full address" autocomplete="street-address">
+                        </div>
+                        <div class="field-row">
+                            <div class="field-group">
+                                <label data-en="City" data-ar="المدينة">City</label>
+                                <input type="text" id="profCity" placeholder="City" autocomplete="address-level2">
+                            </div>
+                            <div class="field-group">
+                                <label data-en="Governorate" data-ar="المحافظة">Governorate</label>
+                                <select id="profGovernorate">
+                                    <option value="" data-en="Select" data-ar="اختر">Select</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-pink">
+                            <i class="fas fa-save"></i> <span data-en="Save Changes" data-ar="حفظ التغييرات">Save Changes</span>
+                        </button>
+                    </form>
+                </div>
+                <div id="panel-orders" style="display:none">
+                    <h2 data-en="My Orders" data-ar="طلباتي">My Orders</h2>
+                    <div class="orders-grid" id="ordersGrid">
+                        <p style="color:var(--gray-600);text-align:center;padding:50px" data-en="No orders yet" data-ar="لا توجد طلبات بعد">No orders yet</p>
+                    </div>
+                </div>
+                <div id="panel-password" style="display:none">
+                    <h2 data-en="Change Password" data-ar="تغيير كلمة المرور">Change Password</h2>
+                    <form onsubmit="changePassword(event)">
+                        <div class="field-group">
+                            <label data-en="Current Password" data-ar="كلمة المرور الحالية">Current Password</label>
+                            <input type="password" id="currPass" required autocomplete="current-password">
+                        </div>
+                        <div class="field-group">
+                            <label data-en="New Password" data-ar="كلمة المرور الجديدة">New Password</label>
+                            <input type="password" id="newPass" required minlength="8" autocomplete="new-password" placeholder="Min 8 chars, uppercase, lowercase, number">
+                        </div>
+                        <div class="field-group">
+                            <label data-en="Confirm New Password" data-ar="تأكيد كلمة المرور">Confirm New Password</label>
+                            <input type="password" id="confPass" required minlength="8" autocomplete="new-password">
+                        </div>
+                        <button type="submit" class="btn btn-pink">
+                            <i class="fas fa-key"></i> <span data-en="Update Password" data-ar="تحديث كلمة المرور">Update Password</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo" onclick="goTo('home'); return false;" aria-label="Home">
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2C12 2 8 6 8 10C8 14 12 18 12 18C12 18 16 14 16 10C16 6 12 2 12 2Z"/>
+                            <path d="M2 12C2 12 6 8 10 8C14 8 18 12 18 12C18 12 14 16 10 16C6 16 2 12 2 12Z"/>
+                            <circle cx="12" cy="12" r="2"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">
+                        <div class="logo-title" data-en="Azhar Al-Sanabel" data-ar="أزهار السنابل">Azhar Al-Sanabel</div>
+                        <div class="logo-subtitle" data-en="LUXURY FLOWERS" data-ar="زهور فاخرة">LUXURY FLOWERS</div>
+                    </div>
+                </a>
+                <p data-en="Premium flower shop in Irbid, Jordan. Covering all governorates with fast delivery." data-ar="متجر زهور فاخر في إربد، الأردن. نغطي جميع المحافظات بتوصيل سريع.">
+                    Premium flower shop in Irbid, Jordan. Covering all governorates with fast delivery.
+                </p>
+                <div class="footer-socials">
+                    <a href="https://instagram.com/azhar.alsanabel" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/azhar.alsanabel" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://tiktok.com/@azhar.alsanabel" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/962791234567" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="goTo('home'); return false;" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="#" onclick="goTo('products'); return false;" data-en="Products" data-ar="المنتجات">Products</a></li>
+                    <li><a href="#" onclick="goTo('about'); return false;" data-en="About" data-ar="من نحن">About</a></li>
+                    <li><a href="#" onclick="goTo('contact'); return false;" data-en="Contact" data-ar="تواصل معنا">Contact</a></li>
+                    <li><a href="#" onclick="goTo('track'); return false;" data-en="Track Order" data-ar="تتبع الطلب">Track Order</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-en="Services" data-ar="الخدمات">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="goTo('products'); return false;" data-en="Flower Bouquets" data-ar="باقات الزهور">Flower Bouquets</a></li>
+                    <li><a href="#" onclick="goTo('products'); return false;" data-en="Bridal Bouquets" data-ar="باقات العروس">Bridal Bouquets</a></li>
+                    <li><a href="#" onclick="goTo('products'); return false;" data-en="Luxury Gifts" data-ar="هدايا فاخرة">Luxury Gifts</a></li>
+                    <li><a href="#" onclick="goTo('products'); return false;" data-en="Car Decoration" data-ar="تزيين السيارات">Car Decoration</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Irbid, Jordan</p>
+                <p><i class="fas fa-phone"></i> +962 79 123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@azhar-alsanabel.com</p>
+                <p><i class="fas fa-clock"></i> 9AM - 9PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Azhar Al-Sanabel. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+    const AppState = {
+        cart: JSON.parse(localStorage.getItem('cart_v2')) || [],
+        user: null,
+        products: [],
+        currentCat: 'all',
+        payMethod: 'cash',
+        lang: localStorage.getItem('lang') || 'en',
+        chatOpen: false,
+        searchQuery: ''
+    };
+
+    (function init3DBackground() {
+        const canvas = document.getElementById('bg-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let w, h, particles = [], flowers = [], time = 0;
+        let mouseX = w / 2, mouseY = h / 2;
+        let scrollY = 0;
+
+        function resize() {
+            w = canvas.width = window.innerWidth;
+            h = canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+        window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+        const colors = ['#FF9DE2', '#FFB8EC', '#E87BC8', '#FFC4EC', '#D4AF37', '#FF6EC7'];
+        const flowerSvgs = [
+            'M12 2C12 2 8 6 8 10C8 14 12 18 12 18C12 18 16 14 16 10C16 6 12 2 12 2Z',
+            'M2 12C2 12 6 8 10 8C14 8 18 12 18 12C18 12 14 16 10 16C6 16 2 12 2 12Z',
+            'M12 3C12 3 7 8 7 13C7 18 12 21 12 21C12 21 17 18 17 13C17 8 12 3 12 3Z'
+        ];
+
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * w, y: Math.random() * h, z: Math.random() * 2 + 0.5,
+                size: Math.random() * 2.5 + 0.5, speedX: (Math.random() - 0.5) * 0.3,
+                speedY: (Math.random() - 0.5) * 0.3, opacity: Math.random() * 0.4 + 0.05,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                pulse: Math.random() * Math.PI * 2, pulseSpeed: Math.random() * 0.02 + 0.01
+            });
+        }
+
+        for (let i = 0; i < 12; i++) {
+            flowers.push({
+                x: Math.random() * w, y: Math.random() * h, z: Math.random() * 1.5 + 0.5,
+                size: Math.random() * 18 + 12, speedY: Math.random() * 0.2 + 0.05,
+                rotation: Math.random() * 360, rotSpeed: (Math.random() - 0.5) * 1.5,
+                opacity: Math.random() * 0.1 + 0.03, wobble: Math.random() * Math.PI * 2,
+                wobbleSpeed: Math.random() * 0.015 + 0.005,
+                svg: flowerSvgs[Math.floor(Math.random() * flowerSvgs.length)],
+                color: colors[Math.floor(Math.random() * colors.length)]
+            });
+        }
+
+        function animate() {
+            time += 0.016;
+            ctx.clearRect(0, 0, w, h);
+            const parallaxOffset = scrollY * 0.15;
+            const grad = ctx.createRadialGradient(
+                w/2 + (mouseX - w/2) * 0.05, h/2 + (mouseY - h/2) * 0.05 - parallaxOffset * 0.3, 0,
+                w/2, h/2, w
+            );
+            grad.addColorStop(0, 'rgba(255, 157, 226, 0.025)');
+            grad.addColorStop(0.5, 'rgba(5, 5, 5, 0)');
+            grad.addColorStop(1, 'rgba(255, 157, 226, 0.015)');
+            ctx.fillStyle = grad;
+            ctx.fillRect(0, 0, w, h);
+
+            particles.forEach(p => {
+                const depthFactor = 1 / p.z;
+                p.x += p.speedX * depthFactor + (mouseX - w/2) * 0.00005 * depthFactor;
+                p.y += p.speedY * depthFactor + (mouseY - h/2) * 0.00005 * depthFactor - scrollY * 0.0001 * depthFactor;
+                p.pulse += p.pulseSpeed;
+                if (p.x < -50) p.x = w + 50;
+                if (p.x > w + 50) p.x = -50;
+                if (p.y < -50) p.y = h + 50;
+                if (p.y > h + 50) p.y = -50;
+                const pulseSize = p.size + Math.sin(p.pulse) * 0.8;
+                const alpha = p.opacity + Math.sin(p.pulse) * 0.08;
+                const glowGrad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, pulseSize * 4 * depthFactor);
+                glowGrad.addColorStop(0, p.color);
+                glowGrad.addColorStop(1, 'transparent');
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, pulseSize * 4 * depthFactor, 0, Math.PI * 2);
+                ctx.fillStyle = glowGrad;
+                ctx.globalAlpha = Math.max(0, alpha * 0.2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, pulseSize * depthFactor, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = Math.max(0, alpha);
+                ctx.fill();
+            });
+
+            flowers.forEach(f => {
+                const depthFactor = 1 / f.z;
+                f.y += f.speedY * depthFactor;
+                f.rotation += f.rotSpeed;
+                f.wobble += f.wobbleSpeed;
+                if (f.y > h + 60) { f.y = -60; f.x = Math.random() * w; }
+                const wobbleX = f.x + Math.sin(f.wobble) * 25;
+                const parallaxY = f.y - scrollY * 0.08 * depthFactor;
+                ctx.save();
+                ctx.translate(wobbleX, parallaxY);
+                ctx.rotate(f.rotation * Math.PI / 180);
+                ctx.scale(f.size * depthFactor / 12, f.size * depthFactor / 12);
+                ctx.beginPath();
+                const path = new Path2D(f.svg);
+                ctx.strokeStyle = f.color;
+                ctx.lineWidth = 1.5;
+                ctx.globalAlpha = f.opacity;
+                ctx.stroke(path);
+                ctx.fillStyle = f.color;
+                ctx.globalAlpha = f.opacity * 0.3;
+                ctx.fill(path);
+                ctx.restore();
+            });
+            ctx.globalAlpha = 1;
+            requestAnimationFrame(animate);
+        }
+        animate();
+        document.addEventListener('mousemove', e => { mouseX = e.clientX; mouseY = e.clientY; });
+    })();
+
+    (function initScrollReveal() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const children = entry.target.querySelectorAll('.service-card, .product-card, .stat-box, .contact-row');
+                    children.forEach((child, i) => {
+                        setTimeout(() => child.classList.add('visible'), i * 100);
+                    });
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.section-header, .services-grid, .products-grid, .stats-row, .contact-info').forEach(el => {
+            observer.observe(el);
+        });
+    })();
+
+    function toggleLanguage() {
+        AppState.lang = AppState.lang === 'en' ? 'ar' : 'en';
+        localStorage.setItem('lang', AppState.lang);
+        applyLanguage();
+    }
+
+    function applyLanguage() {
+        const btn = document.getElementById('langBtn');
+        if (btn) btn.textContent = AppState.lang === 'en' ? 'AR' : 'EN';
+        document.documentElement.dir = AppState.lang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = AppState.lang === 'ar' ? 'ar' : 'en';
+        document.querySelectorAll('[data-en][data-ar]').forEach(el => {
+            el.textContent = el.getAttribute('data-' + AppState.lang);
+        });
+        document.querySelectorAll('input[data-en-placeholder]').forEach(el => {
+            const ph = el.getAttribute('data-' + AppState.lang + '-placeholder');
+            if (ph) el.placeholder = ph;
+        });
+    }
+
+    function goTo(page) {
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-desktop a').forEach(a => a.classList.remove('active'));
+        const el = document.getElementById('page-' + page);
+        if (el) { el.classList.add('active'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        const navMap = {home: 0, products: 1, about: 2, contact: 3};
+        const idx = navMap[page];
+        if (idx !== undefined) {
+            const links = document.querySelectorAll('.nav-desktop a');
+            if (links[idx]) links[idx].classList.add('active');
+        }
+        if (page === 'products') renderAllProducts();
+        if (page === 'checkout') renderCheckoutSummary();
+        if (page === 'account') { if (!AppState.user) { openAuth(); goTo('home'); return; } loadAccount(); }
+        if (page === 'track') { document.getElementById('trackResult').classList.remove('show'); }
+        document.getElementById('mobileNav').classList.remove('show');
+        const titles = { home: 'Azhar Al-Sanabel | Luxury Flower Shop', products: 'Products | Azhar Al-Sanabel', about: 'About Us | Azhar Al-Sanabel', contact: 'Contact | Azhar Al-Sanabel', checkout: 'Checkout | Azhar Al-Sanabel', account: 'My Account | Azhar Al-Sanabel', track: 'Track Order | Azhar Al-Sanabel' };
+        document.title = titles[page] || titles.home;
+    }
+
+    function toggleMobileNav() {
+        document.getElementById('mobileNav').classList.toggle('show');
+    }
+
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('mainHeader');
+        if (header) header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    async function loadUser() {
+        try {
+            const res = await fetch('/api/me');
+            const data = await res.json();
+            if (data.logged_in) { AppState.user = data.user; updateUserUI(); }
+        } catch (e) { console.error('Load user error:', e); }
+    }
+
+    function updateUserUI() {
+        const area = document.getElementById('userArea');
+        if (!area) return;
+        if (AppState.user) {
+            area.innerHTML = `
+                <div style="position:relative">
+                    <div class="user-avatar" onclick="toggleUserDropdown()" style="cursor:pointer" role="button" aria-haspopup="true" aria-expanded="false">
+                        ${AppState.user.name.charAt(0).toUpperCase()}
+                    </div>
+                    <div id="userDropdown" style="display:none;position:absolute;top:50px;right:0;background:var(--black-card);border:1px solid var(--gray-900);border-radius:16px;padding:10px 0;min-width:180px;box-shadow:0 20px 50px rgba(0,0,0,0.5);z-index:100">
+                        <a href="#" onclick="goTo('account');toggleUserDropdown();return false;" style="display:block;padding:10px 18px;color:var(--gray-400);text-decoration:none;font-size:14px;transition:all 0.3s">
+                            <i class="fas fa-user-circle" style="margin-right:8px"></i> <span data-en="My Account" data-ar="حسابي">My Account</span>
+                        </a>
+                        ${AppState.user.is_admin ? `<a href="/admin/" target="_blank" style="display:block;padding:10px 18px;color:var(--pink);text-decoration:none;font-size:14px;transition:all 0.3s">
+                            <i class="fas fa-cog" style="margin-right:8px"></i> <span data-en="Admin Panel" data-ar="لوحة التحكم">Admin Panel</span>
+                        </a>` : ''}
+                        <a href="#" onclick="doLogout();toggleUserDropdown();return false;" style="display:block;padding:10px 18px;color:var(--danger);text-decoration:none;font-size:14px;transition:all 0.3s">
+                            <i class="fas fa-sign-out-alt" style="margin-right:8px"></i> <span data-en="Logout" data-ar="تسجيل الخروج">Logout</span>
+                        </a>
+                    </div>
+                </div>
+            `;
+        } else {
+            area.innerHTML = `
+                <button class="login-btn" onclick="openAuth()">
+                    <i class="fas fa-user"></i> <span data-en="Sign In" data-ar="تسجيل الدخول">Sign In</span>
+                </button>
+            `;
+        }
+        applyLanguage();
+    }
+
+    function toggleUserDropdown() {
+        const dd = document.getElementById('userDropdown');
+        if (dd) dd.style.display = dd.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function openAuth() { document.getElementById('authOverlay').classList.add('show'); clearAuthAlerts(); }
+    function closeAuth() { document.getElementById('authOverlay').classList.remove('show'); }
+    function clearAuthAlerts() {
+        document.getElementById('authError').classList.remove('show');
+        document.getElementById('authSuccess').classList.remove('show');
+    }
+    function switchTab(tab) {
+        document.querySelectorAll('.modal-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        document.querySelectorAll('.modal-form').forEach(f => f.classList.remove('active'));
+        event.target.classList.add('active');
+        event.target.setAttribute('aria-selected', 'true');
+        document.getElementById(tab + 'Form').classList.add('active');
+        clearAuthAlerts();
+    }
+
+    async function doLogin(e) {
+        e.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        try {
+            const res = await fetch('/api/login', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email, password})
+            });
+            const data = await res.json();
+            if (data.success) { AppState.user = data.user; updateUserUI(); closeAuth(); toast('Signed in successfully', 'ok'); }
+            else { showAuthError(data.error); }
+        } catch (e) { showAuthError('Connection error. Please try again.'); }
+    }
+
+    async function doRegister(e) {
+        e.preventDefault();
+        const name = document.getElementById('regName').value;
+        const email = document.getElementById('regEmail').value;
+        const phone = document.getElementById('regPhone').value;
+        const password = document.getElementById('regPassword').value;
+        const emailRe = /^[\w\.-]+@[\w\.-]+\.\w+$/;
+        if (!emailRe.test(email)) { showAuthError('Invalid email address'); return; }
+        const phoneRe = /^(07[789]\d{7})$/;
+        if (!phoneRe.test(phone)) { showAuthError('Phone must start with 07 and be 10 digits'); return; }
+        const passRe = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        if (!passRe.test(password)) { showAuthError('Password must be 8+ chars with uppercase, lowercase, and number'); return; }
+        try {
+            const res = await fetch('/api/register', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({name, email, phone, password})
+            });
+            const data = await res.json();
+            if (data.success) { AppState.user = data.user; updateUserUI(); closeAuth(); toast('Account created successfully!', 'ok'); }
+            else { showAuthError(data.error); }
+        } catch (e) { showAuthError('Connection error. Please try again.'); }
+    }
+
+    async function doLogout() {
+        try { await fetch('/api/logout', {method: 'POST'}); AppState.user = null; updateUserUI(); toast('Logged out', 'ok'); goTo('home'); }
+        catch (e) {}
+    }
+
+    function showAuthError(msg) {
+        const el = document.getElementById('authError');
+        el.textContent = msg;
+        el.classList.add('show');
+    }
+
+    async function loadProducts() {
+        try {
+            const res = await fetch('/api/products');
+            AppState.products = await res.json();
+            renderHomeProducts();
+        } catch (e) { console.error('Load products error:', e); }
+    }
+
+    function renderHomeProducts() {
+        const el = document.getElementById('homeProducts');
+        if (!el) return;
+        const featured = AppState.products.filter(p => p.featured).slice(0, 4);
+        el.innerHTML = featured.map(p => productCard(p)).join('');
+        setTimeout(() => {
+            el.querySelectorAll('.product-card').forEach((card, i) => {
+                setTimeout(() => card.classList.add('visible'), i * 100);
+            });
+        }, 100);
+    }
+
+    function renderAllProducts() {
+        const el = document.getElementById('allProducts');
+        if (!el) return;
+        let filtered = AppState.currentCat === 'all' ? AppState.products : AppState.products.filter(p => p.category === AppState.currentCat);
+        if (AppState.searchQuery) {
+            const q = AppState.searchQuery.toLowerCase();
+            filtered = filtered.filter(p => p.name.toLowerCase().includes(q) || (p.description && p.description.toLowerCase().includes(q)));
+        }
+        el.innerHTML = filtered.map(p => productCard(p)).join('');
+        setTimeout(() => {
+            el.querySelectorAll('.product-card').forEach((card, i) => {
+                setTimeout(() => card.classList.add('visible'), i * 80);
+            });
+        }, 50);
+    }
+
+    function productCard(p) {
+        const stockClass = p.stock > 10 ? '' : p.stock > 0 ? 'low' : 'out';
+        const stockText = p.stock > 10 ? (AppState.lang === 'ar' ? 'متوفر' : 'In Stock') : p.stock > 0 ? (AppState.lang === 'ar' ? `متبقي ${p.stock}` : `${p.stock} left`) : (AppState.lang === 'ar' ? 'نفذت الكمية' : 'Out of Stock');
+        const catNames = {bouquets: AppState.lang==='ar'?'باقات':'Bouquets', bridal: AppState.lang==='ar'?'عروس':'Bridal', gifts: AppState.lang==='ar'?'هدايا':'Gifts', decor: AppState.lang==='ar'?'تزيين':'Decor'};
+        return `
+            <div class="product-card" onclick="showDetail(${p.id})" role="article" tabindex="0" onkeypress="if(event.key==='Enter')showDetail(${p.id})">
+                <div class="product-image-wrap">
+                    <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=400'">
+                    ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+                </div>
+                <div class="product-info">
+                    <div class="product-cat">${catNames[p.category] || p.category}</div>
+                    <h3 class="product-title">${p.name}</h3>
+                    <div class="product-price">${p.price} <span>JOD</span></div>
+                    <div class="product-stock ${stockClass}"><span class="dot"></span>${stockText}</div>
+                    <button class="add-cart-btn" onclick="event.stopPropagation();addCart(${p.id})" ${p.stock <= 0 ? 'disabled' : ''}>
+                        <i class="fas fa-cart-plus"></i> ${AppState.lang==='ar' ? 'أضف للسلة' : 'Add to Cart'}
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    function filterProds(cat) {
+        AppState.currentCat = cat;
+        document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        if (document.getElementById('page-products').classList.contains('active')) renderAllProducts();
+        else renderHomeProducts();
+    }
+
+    function searchProducts(query) {
+        AppState.searchQuery = query;
+        if (document.getElementById('page-products').classList.contains('active')) renderAllProducts();
+    }
+
+    async function showDetail(pid) {
+        try {
+            const res = await fetch(`/api/product/${pid}`);
+            const p = await res.json();
+            const container = document.getElementById('detailContainer');
+            const catNames = {bouquets: AppState.lang==='ar'?'باقات':'Bouquets', bridal: AppState.lang==='ar'?'عروس':'Bridal', gifts: AppState.lang==='ar'?'هدايا':'Gifts', decor: AppState.lang==='ar'?'تزيين':'Decor'};
+            container.innerHTML = `
+                <div class="detail-image">
+                    <img src="${p.image}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=600'" loading="lazy">
+                </div>
+                <div class="detail-content">
+                    <div class="product-cat">${catNames[p.category] || p.category}</div>
+                    <h1>${p.name}</h1>
+                    <div class="detail-price">${p.price} JOD</div>
+                    <p class="detail-desc">${p.description}</p>
+                    <div class="product-stock ${p.stock > 10 ? '' : p.stock > 0 ? 'low' : 'out'}">
+                        <span class="dot"></span>
+                        ${p.stock > 10 ? (AppState.lang==='ar'?'متوفر':'In Stock') : p.stock > 0 ? (AppState.lang==='ar'?`متبقي ${p.stock} فقط`:`Only ${p.stock} left`) : (AppState.lang==='ar'?'نفذت الكمية':'Out of Stock')}
+                    </div>
+                    <div class="qty-row">
+                        <span class="qty-label" data-en="Quantity:" data-ar="الكمية:">Quantity:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn" onclick="changeDetailQty(-1)" aria-label="Decrease quantity">-</button>
+                            <span class="qty-value" id="detailQty">1</span>
+                            <button class="qty-btn" onclick="changeDetailQty(1)" aria-label="Increase quantity">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-pink" style="width:100%;margin-bottom:12px" onclick="addCart(${p.id}, parseInt(document.getElementById('detailQty').textContent))" ${p.stock <= 0 ? 'disabled' : ''}>
+                        <i class="fas fa-cart-plus"></i> ${AppState.lang==='ar' ? 'أضف للسلة' : 'Add to Cart'}
+                    </button>
+                    <button class="btn btn-outline" style="width:100%" onclick="goTo('products')">
+                        <i class="fas fa-arrow-left"></i> ${AppState.lang==='ar' ? 'العودة' : 'Back to Products'}
+                    </button>
+                </div>
+            `;
+            goTo('product');
+            applyLanguage();
+        } catch (e) { toast('Error loading product', 'err'); }
+    }
+
+    function changeDetailQty(delta) {
+        const el = document.getElementById('detailQty');
+        let v = parseInt(el.textContent) + delta;
+        if (v < 1) v = 1;
+        el.textContent = v;
+    }
+
+    function addCart(pid, qty = 1) {
+        const p = AppState.products.find(x => x.id === pid);
+        if (!p || p.stock <= 0) return;
+        const existing = AppState.cart.find(i => i.product_id === pid);
+        if (existing) {
+            if (existing.quantity + qty <= p.stock) existing.quantity += qty;
+            else { toast(AppState.lang==='ar'?'الكمية غير متوفرة':'Not enough stock', 'err'); return; }
+        } else {
+            AppState.cart.push({product_id: pid, name: p.name, price: p.price, image: p.image, quantity: qty});
+        }
+        saveCart(); updateCartUI();
+        toast(AppState.lang==='ar'?'تمت الإضافة للسلة':'Added to cart', 'ok');
+        const badge = document.getElementById('cartBadge');
+        badge.style.animation = 'none';
+        badge.offsetHeight;
+        badge.style.animation = 'badgePulse 0.4s ease';
+    }
+
+    function removeCart(pid) {
+        AppState.cart = AppState.cart.filter(i => i.product_id !== pid);
+        saveCart(); updateCartUI();
+    }
+
+    function updateCartQty(pid, delta) {
+        const item = AppState.cart.find(i => i.product_id === pid);
+        const p = AppState.products.find(x => x.id === pid);
+        if (!item || !p) return;
+        const nq = item.quantity + delta;
+        if (nq > 0 && nq <= p.stock) item.quantity = nq;
+        else if (nq <= 0) { removeCart(pid); return; }
+        else { toast(AppState.lang==='ar'?'الكمية غير متوفرة':'Not enough stock', 'err'); return; }
+        saveCart(); updateCartUI();
+    }
+
+    function saveCart() { localStorage.setItem('cart_v2', JSON.stringify(AppState.cart)); }
+
+    function updateCartUI() {
+        const count = AppState.cart.reduce((s, i) => s + i.quantity, 0);
+        document.getElementById('cartBadge').textContent = count;
+        const body = document.getElementById('cartBody');
+        const footer = document.getElementById('cartFooter');
+        if (AppState.cart.length === 0) {
+            body.innerHTML = `<div class="cart-empty-state"><i class="fas fa-shopping-basket"></i><p>${AppState.lang==='ar'?'السلة فارغة':'Your cart is empty'}</p></div>`;
+            footer.style.display = 'none'; return;
+        }
+        let sub = 0;
+        body.innerHTML = AppState.cart.map(i => {
+            const t = i.price * i.quantity; sub += t;
+            return `
+                <div class="cart-item-row">
+                    <div class="cart-item-img"><img src="${i.image}" alt="${i.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=100'"></div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${i.name}</div>
+                        <div class="cart-item-price">${t.toFixed(2)} JOD</div>
+                        <div class="cart-item-actions">
+                            <div class="cart-qty">
+                                <button onclick="updateCartQty(${i.product_id}, -1)" aria-label="Decrease">-</button>
+                                <span>${i.quantity}</span>
+                                <button onclick="updateCartQty(${i.product_id}, 1)" aria-label="Increase">+</button>
+                            </div>
+                            <button class="cart-remove" onclick="removeCart(${i.product_id})" aria-label="Remove"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+        const total = sub + 5;
+        document.getElementById('cartSubtotal').textContent = sub.toFixed(2) + ' JOD';
+        document.getElementById('cartGrandTotal').textContent = total.toFixed(2) + ' JOD';
+        footer.style.display = 'block';
+    }
+
+    function toggleCart() {
+        document.getElementById('cartBackdrop').classList.toggle('show');
+        document.getElementById('cartDrawer').classList.toggle('show');
+    }
+
+    function renderCheckoutSummary() {
+        const el = document.getElementById('summaryItems');
+        let sub = 0;
+        el.innerHTML = AppState.cart.map(i => {
+            const t = i.price * i.quantity; sub += t;
+            return `<div class="summary-line"><span>${i.name} x ${i.quantity}</span><span>${t.toFixed(2)} JOD</span></div>`;
+        }).join('');
+        document.getElementById('summaryTotal').textContent = (sub + 5).toFixed(2) + ' JOD';
+        if (AppState.user) {
+            document.getElementById('coName').value = AppState.user.name || '';
+            document.getElementById('coPhone').value = AppState.user.phone || '';
+            document.getElementById('coEmail').value = AppState.user.email || '';
+            document.getElementById('coAddress').value = AppState.user.address || '';
+            document.getElementById('coCity').value = AppState.user.city || '';
+            document.getElementById('coGovernorate').value = AppState.user.governorate || '';
+        }
+    }
+
+    function pickPayment(el, m) {
+        document.querySelectorAll('.payment-option').forEach(p => p.classList.remove('selected'));
+        el.classList.add('selected'); AppState.payMethod = m;
+    }
+
+    async function doCheckout(e) {
+        e.preventDefault();
+        if (AppState.cart.length === 0) { toast(AppState.lang==='ar'?'السلة فارغة':'Cart is empty', 'err'); return; }
+        const customer = {
+            name: document.getElementById('coName').value,
+            phone: document.getElementById('coPhone').value,
+            email: document.getElementById('coEmail').value,
+            address: document.getElementById('coAddress').value,
+            city: document.getElementById('coCity').value,
+            governorate: document.getElementById('coGovernorate').value,
+            payment_method: AppState.payMethod,
+            notes: document.getElementById('coNotes').value
+        };
+        const items = AppState.cart.map(i => ({product_id: i.product_id, quantity: i.quantity}));
+        try {
+            const res = await fetch('/api/order', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({items, customer})
+            });
+            const data = await res.json();
+            if (data.success) {
+                AppState.cart = []; saveCart(); updateCartUI();
+                toast(`${AppState.lang==='ar'?'تم الطلب! رقم':'Order placed! ID'}: ${data.order_id}`, 'ok');
+                goTo('home');
+            } else { toast(data.error || 'Error', 'err'); }
+        } catch (e) { toast('Checkout error', 'err'); }
+    }
+
+    async function trackOrder() {
+        const orderId = document.getElementById('trackOrderId').value.trim();
+        if (!orderId) { toast('Please enter an order ID', 'err'); return; }
+        try {
+            const res = await fetch(`/api/order/${orderId}`);
+            const data = await res.json();
+            if (data.error) { toast(data.error, 'err'); return; }
+            const statusMap = {
+                pending: { label: AppState.lang==='ar'?'قيد الانتظار':'Pending', step: 1 },
+                processing: { label: AppState.lang==='ar'?'قيد التنفيذ':'Processing', step: 2 },
+                shipped: { label: AppState.lang==='ar'?'تم الشحن':'Shipped', step: 3 },
+                delivered: { label: AppState.lang==='ar'?'تم التوصيل':'Delivered', step: 4 },
+                cancelled: { label: AppState.lang==='ar'?'ملغي':'Cancelled', step: 0 }
+            };
+            const s = statusMap[data.status] || { label: data.status, step: 0 };
+            const steps = [
+                { name: AppState.lang==='ar'?'تم الطلب':'Order Placed', icon: 'fa-clipboard-check' },
+                { name: AppState.lang==='ar'?'قيد المعالجة':'Processing', icon: 'fa-cog' },
+                { name: AppState.lang==='ar'?'تم الشحن':'Shipped', icon: 'fa-shipping-fast' },
+                { name: AppState.lang==='ar'?'تم التوصيل':'Delivered', icon: 'fa-check-circle' }
+            ];
+            let timelineHtml = steps.map((step, i) => `
+                <div class="timeline-item">
+                    <div class="timeline-dot ${i < s.step ? 'active' : ''}"><i class="fas ${step.icon}"></i></div>
+                    <div class="timeline-content">
+                        <h4>${step.name}</h4>
+                        <p>${i < s.step ? (AppState.lang==='ar'?'مكتمل':'Completed') : (AppState.lang==='ar'?'قيد الانتظار':'Pending')}</p>
+                    </div>
+                </div>
+            `).join('');
+            document.getElementById('trackContent').innerHTML = `
+                <h3 style="margin-bottom:10px">${data.order_id}</h3>
+                <p style="color:var(--gray-500);margin-bottom:20px">${data.customer_name} - ${new Date(data.date).toLocaleDateString()}</p>
+                <div class="track-timeline">${timelineHtml}</div>
+                <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--gray-900)">
+                    <div style="display:flex;justify-content:space-between">
+                        <span style="color:var(--gray-500)">Total</span>
+                        <span style="color:var(--pink);font-weight:700;font-size:20px">${data.total.toFixed(2)} JOD</span>
+                    </div>
+                </div>
+            `;
+            document.getElementById('trackResult').classList.add('show');
+        } catch (e) { toast('Error tracking order', 'err'); }
+    }
+
+    async function loadAccount() {
+        if (!AppState.user) return;
+        document.getElementById('accName').textContent = AppState.user.name;
+        document.getElementById('accEmail').textContent = AppState.user.email;
+        document.getElementById('accAvatar').textContent = AppState.user.name.charAt(0).toUpperCase();
+        document.getElementById('profName').value = AppState.user.name || '';
+        document.getElementById('profPhone').value = AppState.user.phone || '';
+        document.getElementById('profEmail').value = AppState.user.email || '';
+        document.getElementById('profAddress').value = AppState.user.address || '';
+        document.getElementById('profCity').value = AppState.user.city || '';
+        document.getElementById('profGovernorate').value = AppState.user.governorate || '';
+        try {
+            const res = await fetch('/api/orders');
+            const orders = await res.json();
+            const grid = document.getElementById('ordersGrid');
+            if (orders.length === 0) {
+                grid.innerHTML = `<p style="color:var(--gray-600);text-align:center;padding:50px">${AppState.lang==='ar'?'لا توجد طلبات':'No orders yet'}</p>`;
+            } else {
+                const statusMap = {pending: AppState.lang==='ar'?'قيد الانتظار':'Pending', processing: AppState.lang==='ar'?'قيد التنفيذ':'Processing', shipped: AppState.lang==='ar'?'تم الشحن':'Shipped', delivered: AppState.lang==='ar'?'تم التوصيل':'Delivered', cancelled: AppState.lang==='ar'?'ملغي':'Cancelled'};
+                grid.innerHTML = orders.map(o => `
+                    <div class="order-item">
+                        <div class="order-top">
+                            <span class="order-id">${o.id}</span>
+                            <span class="order-status ${o.status}">${statusMap[o.status] || o.status}</span>
+                        </div>
+                        <div class="order-info">
+                            <p><i class="fas fa-calendar"></i> ${new Date(o.date).toLocaleDateString()}</p>
+                            <p><i class="fas fa-credit-card"></i> ${o.payment_method}</p>
+                            <p>${o.items || ''}</p>
+                        </div>
+                        <div class="order-amount">${o.total.toFixed(2)} JOD</div>
+                    </div>
+                `).join('');
+            }
+        } catch (e) {}
+    }
+
+    function showTab(tab) {
+        document.querySelectorAll('.account-menu a').forEach(a => a.classList.remove('active'));
+        event.target.closest('a').classList.add('active');
+        document.getElementById('panel-profile').style.display = tab === 'profile' ? 'block' : 'none';
+        document.getElementById('panel-orders').style.display = tab === 'orders' ? 'block' : 'none';
+        document.getElementById('panel-password').style.display = tab === 'password' ? 'block' : 'none';
+    }
+
+    async function updateProfile(e) {
+        e.preventDefault();
+        const data = {
+            name: document.getElementById('profName').value,
+            phone: document.getElementById('profPhone').value,
+            address: document.getElementById('profAddress').value,
+            city: document.getElementById('profCity').value,
+            governorate: document.getElementById('profGovernorate').value
+        };
+        try {
+            const res = await fetch('/api/update-profile', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+            const r = await res.json();
+            if (r.success) { AppState.user = r.user; updateUserUI(); toast('Profile updated', 'ok'); }
+            else toast(r.error || 'Error', 'err');
+        } catch (e) { toast('Error', 'err'); }
+    }
+
+    async function changePassword(e) {
+        e.preventDefault();
+        const curr = document.getElementById('currPass').value;
+        const nw = document.getElementById('newPass').value;
+        const conf = document.getElementById('confPass').value;
+        if (nw !== conf) { toast('Passwords do not match', 'err'); return; }
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(nw)) { toast('Password must be 8+ chars with uppercase, lowercase, and number', 'err'); return; }
+        try {
+            const res = await fetch('/api/update-profile', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({current_password: curr, new_password: nw})
+            });
+            const r = await res.json();
+            if (r.success) { toast('Password updated', 'ok'); e.target.reset(); }
+            else toast(r.error || 'Error', 'err');
+        } catch (e) { toast('Error', 'err'); }
+    }
+
+    async function sendContact(e) {
+        e.preventDefault();
+        const data = {
+            name: document.getElementById('contactName').value,
+            email: document.getElementById('contactEmail').value,
+            phone: document.getElementById('contactPhone').value,
+            subject: document.getElementById('contactSubject').value,
+            message: document.getElementById('contactMessage').value
+        };
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            });
+            const r = await res.json();
+            if (r.success) { toast('Message sent!', 'ok'); e.target.reset(); }
+            else toast(r.error || 'Error', 'err');
+        } catch (e) { toast('Error', 'err'); }
+    }
+
+    function toggleChat() {
+        AppState.chatOpen = !AppState.chatOpen;
+        document.getElementById('chatWindow').classList.toggle('show', AppState.chatOpen);
+    }
+
+    async function sendChat() {
+        const input = document.getElementById('chatInput');
+        const msg = input.value.trim(); if (!msg) return;
+        const body = document.getElementById('chatMessages');
+        body.innerHTML += `<div class="msg user"><strong>${AppState.lang==='ar'?'أنت':'You'}:</strong><br>${msg}</div>`;
+        input.value = ''; body.scrollTop = body.scrollHeight;
+        setTimeout(() => {
+            let resp = AppState.lang === 'ar' ? 'شكراً لتواصلك معنا!<br><br>' : 'Thank you for reaching out!<br><br>';
+            const lower = msg.toLowerCase();
+            if (lower.includes('order') || lower.includes('طلب')) {
+                resp += AppState.lang==='ar' ? 'لمتابعة طلبك، سجل الدخول واذهب إلى "طلباتي".<br><br>أو تواصل معنا على واتساب: <a href="https://wa.me/962791234567" target="_blank" rel="noopener" style="color:var(--pink)">+962 79 123 4567</a>' : 'To track your order, sign in and go to "My Orders" or use Track Order page.<br><br>Or contact us on WhatsApp: <a href="https://wa.me/962791234567" target="_blank" rel="noopener" style="color:var(--pink)">+962 79 123 4567</a>';
+            } else if (lower.includes('price') || lower.includes('سعر')) {
+                resp += AppState.lang==='ar' ? 'تصفح منتجاتنا في صفحة المنتجات. هل تبحث عن منتج معين؟' : 'Browse our products on the Products page. Looking for something specific?';
+            } else if (lower.includes('delivery') || lower.includes('توصيل')) {
+                resp += AppState.lang==='ar' ? 'التوصيل لجميع المحافظات بتكلفة 5 دنانير. 1-3 أيام عمل.' : 'Delivery to all governorates for 5 JOD. 1-3 business days.';
+            } else if (lower.includes('human') || lower.includes('موظف') || lower.includes('person')) {
+                resp += AppState.lang==='ar' ? 'سيتم تحويلك لموظف الدعم...<br><br>واتساب: <a href="https://wa.me/962791234567" target="_blank" rel="noopener" style="color:var(--pink)">+962 79 123 4567</a>' : 'Transferring to human support...<br><br>WhatsApp: <a href="https://wa.me/962791234567" target="_blank" rel="noopener" style="color:var(--pink)">+962 79 123 4567</a>';
+            } else {
+                resp += AppState.lang==='ar' ? 'كيف يمكنني مساعدتك؟<br>• استفسار عن منتج<br>• متابعة طلب<br>• مواعيد التوصيل' : 'How can I help?<br>• Product inquiry<br>• Track order<br>• Delivery info';
+            }
+            body.innerHTML += `<div class="msg bot">${resp}</div>`;
+            body.scrollTop = body.scrollHeight;
+        }, 800);
+        try {
+            await fetch('/api/chat', {
+                method: 'POST', headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({name: AppState.user?.name || 'Guest', email: AppState.user?.email || '', message: msg})
+            });
+        } catch (e) {}
+    }
+
+    async function loadGovernorates() {
+        try {
+            const res = await fetch('/api/governorates');
+            const g = await res.json();
+            ['coGovernorate', 'profGovernorate'].forEach(id => {
+                const sel = document.getElementById(id);
+                if (sel) {
+                    g.forEach(gov => {
+                        const opt = document.createElement('option');
+                        opt.value = gov; opt.textContent = gov;
+                        sel.appendChild(opt);
+                    });
+                }
+            });
+        } catch (e) {}
+    }
+
+    function toast(message, type = 'ok') {
+        const stack = document.getElementById('toastStack');
+        const t = document.createElement('div');
+        t.className = `toast ${type}`;
+        t.innerHTML = `<i class="fas fa-${type==='ok'?'check-circle':'exclamation-circle'}"></i><span>${message}</span>`;
+        stack.appendChild(t);
+        setTimeout(() => { t.style.opacity = '0'; t.style.transform = 'translate(-50%, -20px)'; setTimeout(() => t.remove(), 300); }, 3500);
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeAuth();
+            document.getElementById('cartBackdrop').classList.remove('show');
+            document.getElementById('cartDrawer').classList.remove('show');
+            document.getElementById('chatWindow').classList.remove('show');
+            AppState.chatOpen = false;
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => { document.getElementById('pageLoader').classList.add('hidden'); }, 800);
+        loadUser();
+        loadProducts();
+        loadGovernorates();
+        updateCartUI();
+        applyLanguage();
+        document.addEventListener('click', e => {
+            if (!e.target.closest('#userArea')) {
+                const dd = document.getElementById('userDropdown');
+                if (dd) dd.style.display = 'none';
+            }
+        });
+    });
+    </script>
+</body>
+</html>
